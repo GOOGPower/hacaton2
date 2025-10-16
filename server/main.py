@@ -1,6 +1,13 @@
 from flask import Flask, send_from_directory, send_file
 import os
 from pathlib import Path
+from google_sheets_lib import (
+    GoogleSheetsAPI, 
+    load_sheet_as_columns, 
+    load_sheet_as_dict, 
+    load_sheet_as_rows,
+    get_sheet_headers
+)
 
 app = Flask(__name__)
 
