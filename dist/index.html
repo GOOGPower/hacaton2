@@ -1,60 +1,206 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>bim</title>
-		<script type="module" crossorigin src="/assets/index-xyzQmdyI.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-BKjpaTGS.css">
-	</head>
-	<body>
-		<div id="app">
-			<div class="full-screen" id="container"></div>
+<html lang="ru"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-			<div>
-				<br>
-				<div class="left">
-					<label>Виды работ</label>
-					<select>
-						<option>забивка свай</option>
-						<option>устройство ростверка</option>
-						<option>кирпичная кладка</option>
-					</select>
-				</div>
-				<br>
-				<div class="data-box">
-					<h1>Сводные данные</h1>
-					<div id="data">
-						<table>
-							<tr><th>Факт: </th><td>450</td></tr>
-							<tr><th>План: </th><td>500</td></tr>
-							<tr><th>Отклонение: </th><td style="color: red;">50</td></tr>
-						</table>
-					</div>
-					<div class="left">
-						<button>Показать на макете</button>
-					</div>
-					<h1>Прогноз погоды</h1>
-					<table>
-						<tr>
-							<th>День</th>
-							<th>Температура</th>
-							<th>Ветер</th>
-						</tr>
-						<tr>
-							<td>16.10</td>
-							<td>-10</td>
-							<td>Север</td>
-						</tr>
-					</table>
-					<br><br><br><br><br><br><br><br>
-				</div>
-			</div>
-			<div id="toolbar">
-				<button id="toggle-fullscreen"></button>
-				<button id="play-animation-rotate">Анимация</button>
-			</div>
-		</div>
-	</body>
-</html>
+  <title>FEroom - Аналитика - Показатели</title>
+  <meta name="description" content="Приложение FEroom — корпоративная многофункциональная платформа.">
+
+  <meta property="og:site_name" content="FEroom">
+  <meta property="og:title" content="FEroom">
+  <meta property="og:description" content="Приложение FEroom — корпоративная многофункциональная платформа.">
+
+  <meta property="og:image" content="/img/icons/android-icon-192x192.png">
+  <link rel="image_src" href="/img/icons/android-icon-192x192.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="msapplication-navbutton-color" content="#000000">
+  <meta name="apple-mobile-web-status-bar-style" content="#000000">
+
+  <style>
+    .app-preloader-animation-container {
+      position: fixed;
+      z-index: 10000;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      width: 100%;
+      height: 100dvh;
+      background: #fff;
+    }
+  </style>
+  <script async src="./scripts/tag.js"></script><script type="module" crossorigin="" src="./scripts/index-36e650b1.js"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/modules-chunk-9965c5fa.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/app-8f4e83d6.js">
+  <link rel="stylesheet" href="./styles/style-c25b8062.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./scripts/registerSW.js"></script><style type="text/css">.indiana-scroll-container {
+  overflow: auto; }
+  .indiana-scroll-container--dragging {
+    scroll-behavior: auto !important; }
+    .indiana-scroll-container--dragging > * {
+      pointer-events: none;
+      cursor: -webkit-grab;
+      cursor: grab; }
+  .indiana-scroll-container--hide-scrollbars {
+    overflow: hidden;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none; }
+    .indiana-scroll-container--hide-scrollbars::-webkit-scrollbar {
+      display: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      background: transparent !important;
+      -webkit-appearance: none !important; }
+  .indiana-scroll-container--native-scroll {
+    overflow: auto; }
+
+.indiana-dragging {
+  cursor: -webkit-grab;
+  cursor: grab; }
+</style><script src="./scripts/OneSignalSDK.page.js"></script><script src="./scripts/OneSignalSDK.page.es6.js" defer></script><style id="website-downloader-styles">
+            @keyframes downloadingSpin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            .downloading-show {
+                transform: translateX(-50%) translateY(0) !important;
+            }
+            
+            .downloading-hide {
+                transform: translateX(-50%) translateY(-100%) !important;
+            }
+        </style></head>
+
+<body><div id="listly-loading" class="listly-loading" style="width: 0%;">
+
+</div>
+
+  <noscript>
+    <strong>Извините, произошел сбой в работе приложения. Для работы требуется javascript</strong>
+  </noscript>
+
+  <div id="app" class="app-shell"><div class="g-root main-app-container"><div class="main-app-container__desktop-sidebar"><div class="AppSideMenu__menu__d061fc47d1fa"><div class="AppSideMenu__menu__logo-wrap__d061fc47d1fa"><a href="/"><img class="AppSideMenu__menu__logo__d061fc47d1fa" src="./images/logo-0dd897db.svg" alt="" listly-xywh="17,20.203125,22,22"></a></div><div class="AppSideMenu__menu__block-wrap__d061fc47d1fa"><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/tasks.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="check-circle"><path id="Icon" d="M5.625 9L7.875 11.25L12.375 6.75M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z" stroke="black" stroke-opacity="0.3" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,86,71.171875,18">Моя работа</div></a><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/projects.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Icon"><g id="Vector"><path d="M6.4 4.1L8.5 2L10.6 4.1L8.5 6.2L6.4 4.1Z" stroke="black" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M10.3 8.3L12.4 6.2L14.5 8.3L12.4 10.4L10.3 8.3Z" stroke="black" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M6.4 11.9L8.5 9.8L10.6 11.9L8.5 14L6.4 11.9Z" stroke="black" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.5 8L4.6 5.9L6.7 8L4.6 10.1L2.5 8Z" stroke="black" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,126,54.234375,18">Проекты</div></a></div><div class="AppSideMenu__menu__block-wrap__d061fc47d1fa"><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/meet.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="webcam-01"><path id="Icon" d="M9 13.5C12.3137 13.5 15 10.8137 15 7.5C15 4.18629 12.3137 1.5 9 1.5C5.68629 1.5 3 4.18629 3 7.5C3 10.8137 5.68629 13.5 9 13.5ZM9 13.5V16.5M9 16.5H5.25M9 16.5H12.75M11.25 7.5C11.25 8.74264 10.2426 9.75 9 9.75C7.75736 9.75 6.75 8.74264 6.75 7.5C6.75 6.25736 7.75736 5.25 9 5.25C10.2426 5.25 11.25 6.25736 11.25 7.5Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,182,81.21875,18">Видеозвонки</div></a></div><div class="AppSideMenu__menu__block-wrap__d061fc47d1fa"><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/contacts.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="user-square" clip-path="url(#clip0_7962_26446)"><path id="Icon" d="M3.00002 16.3631C3.45195 16.5 4.06237 16.5 5.1 16.5H12.9C13.9376 16.5 14.548 16.5 15 16.3631M3.00002 16.3631C2.90312 16.3337 2.8135 16.2981 2.72852 16.2548C2.30516 16.039 1.96095 15.6948 1.74524 15.2715C1.5 14.7902 1.5 14.1601 1.5 12.9V5.1C1.5 3.83988 1.5 3.20982 1.74524 2.72852C1.96095 2.30516 2.30516 1.96095 2.72852 1.74524C3.20982 1.5 3.83988 1.5 5.1 1.5H12.9C14.1601 1.5 14.7902 1.5 15.2715 1.74524C15.6948 1.96095 16.039 2.30516 16.2548 2.72852C16.5 3.20982 16.5 3.83988 16.5 5.1V12.9C16.5 14.1601 16.5 14.7902 16.2548 15.2715C16.039 15.6948 15.6948 16.039 15.2715 16.2548C15.1865 16.2981 15.0969 16.3337 15 16.3631M3.00002 16.3631C3.00026 15.7561 3.0039 15.4349 3.05764 15.1647C3.29436 13.9747 4.22466 13.0444 5.41473 12.8076C5.70453 12.75 6.05302 12.75 6.75 12.75H11.25C11.947 12.75 12.2955 12.75 12.5853 12.8076C13.7753 13.0444 14.7056 13.9747 14.9424 15.1647C14.9961 15.4349 14.9997 15.7561 15 16.3631M12 7.125C12 8.78185 10.6569 10.125 9 10.125C7.34315 10.125 6 8.78185 6 7.125C6 5.46815 7.34315 4.125 9 4.125C10.6569 4.125 12 5.46815 12 7.125Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g><defs><clippath id="clip0_7962_26446"><rect width="18" height="18" fill="white" /></clippath></defs></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,238,59.671875,18">Контакты</div></a></div><div class="AppSideMenu__menu__block-wrap__d061fc47d1fa"><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/proposals.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="certificate-02"><path id="Icon" d="M6.75 13.875H11.25M5.25 11.25H12.75M3.75 1.5H14.25C15.0784 1.5 15.75 2.24619 15.75 3.16667V14.8333C15.75 15.7538 15.0784 16.5 14.25 16.5H3.75C2.92157 16.5 2.25 15.7538 2.25 14.8333V3.16667C2.25 2.24619 2.92157 1.5 3.75 1.5ZM8.9982 4.65895C8.47337 4.0746 7.59818 3.91741 6.94061 4.4525C6.28303 4.9876 6.19045 5.88224 6.70685 6.5151C7.22325 7.14796 8.9982 8.625 8.9982 8.625C8.9982 8.625 10.7732 7.14796 11.2896 6.5151C11.806 5.88224 11.7247 4.98197 11.0558 4.4525C10.3869 3.92304 9.52303 4.0746 8.9982 4.65895Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,294,164,18">Предложения по улучшению</div></a><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/shop.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="coins"><path id="Icon" d="M6.282 2.77071C8.19972 0.8521 11.31 0.852841 13.2285 2.77071C15.1469 4.68858 15.1469 7.79911 13.2285 9.71772M11.1589 9.75254C11.1589 12.4658 8.95952 14.6654 6.24644 14.6654C3.53337 14.6654 1.33398 12.4658 1.33398 9.75254C1.33398 7.03925 3.53337 4.8397 6.24644 4.8397C8.95952 4.8397 11.1589 7.03925 11.1589 9.75254Z" stroke="black" stroke-opacity="0.7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,334,97.625,18">Монетный двор</div></a>
+
+
+  <a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/service-links.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4.5C9.41421 4.5 9.75 4.16421 9.75 3.75C9.75 3.33579 9.41421 3 9 3C8.58579 3 8.25 3.33579 8.25 3.75C8.25 4.16421 8.58579 4.5 9 4.5Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 9.75C9.41421 9.75 9.75 9.41421 9.75 9C9.75 8.58579 9.41421 8.25 9 8.25C8.58579 8.25 8.25 8.58579 8.25 9C8.25 9.41421 8.58579 9.75 9 9.75Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 15C9.41421 15 9.75 14.6642 9.75 14.25C9.75 13.8358 9.41421 13.5 9 13.5C8.58579 13.5 8.25 13.8358 8.25 14.25C8.25 14.6642 8.58579 15 9 15Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M14.25 4.5C14.6642 4.5 15 4.16421 15 3.75C15 3.33579 14.6642 3 14.25 3C13.8358 3 13.5 3.33579 13.5 3.75C13.5 4.16421 13.8358 4.5 14.25 4.5Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M14.25 9.75C14.6642 9.75 15 9.41421 15 9C15 8.58579 14.6642 8.25 14.25 8.25C13.8358 8.25 13.5 8.58579 13.5 9C13.5 9.41421 13.8358 9.75 14.25 9.75Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M14.25 15C14.6642 15 15 14.6642 15 14.25C15 13.8358 14.6642 13.5 14.25 13.5C13.8358 13.5 13.5 13.8358 13.5 14.25C13.5 14.6642 13.8358 15 14.25 15Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M3.75 4.5C4.16421 4.5 4.5 4.16421 4.5 3.75C4.5 3.33579 4.16421 3 3.75 3C3.33579 3 3 3.33579 3 3.75C3 4.16421 3.33579 4.5 3.75 4.5Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M3.75 9.75C4.16421 9.75 4.5 9.41421 4.5 9C4.5 8.58579 4.16421 8.25 3.75 8.25C3.33579 8.25 3 8.58579 3 9C3 9.41421 3.33579 9.75 3.75 9.75Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M3.75 15C4.16421 15 4.5 14.6642 4.5 14.25C4.5 13.8358 4.16421 13.5 3.75 13.5C3.33579 13.5 3 13.8358 3 14.25C3 14.6642 3.33579 15 3.75 15Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div>
+    
+    <div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,374,162.234375,18">Дополнительные сервисы</div></a>
+
+    <a class="AppSideMenu__menu__item__d061fc47d1fa AppSideMenu__active__d061fc47d1fa" href="./html/analytics.html">
+      <div class="AppSideMenu__menu__icon__d061fc47d1fa">
+        <div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none"><path stroke-width=".75" d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5zM3 4v2h4.5V4zm5.5 0v2H13V4zM3 10v2h4.5v-2zm5.5 0v2H13v-2zM1 1v2h3.5V1zm4.5 0v2h5V1zm6 0v2H15V1zM1 7v2h3.5V7zm4.5 0v2h5V7zm6 0v2H15V7zM1 13v2h3.5v-2zm4.5 0v2h5v-2zm6 0v2H15v-2z"></path></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,414,65.859375,18"><span style="text-transform: uppercase;">ТИМ</span> строительство</div>
+        </a>
+    <a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/analytics.html">
+      <div class="AppSideMenu__menu__icon__d061fc47d1fa">
+        <div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C13.3132 2 14.6136 2.25866 15.8268 2.76121C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C19.9997 5.85752 20.7363 6.95991 21.2388 8.17317C21.7413 9.38643 22 10.6868 22 12M12 2V12M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5229 22 12M12 2C17.5228 2 22 6.47716 22 12M22 12L12 12M22 12C22 13.5781 21.6265 15.1338 20.9101 16.5399C20.4366 17.4691 19.8223 18.3154 19.0917 19.0504C18.7603 19.3837 18.5946 19.5504 18.3385 19.621C18.1349 19.6772 17.8545 19.6555 17.662 19.5688C17.4198 19.4597 17.259 19.2384 16.9374 18.7957L12 12" stroke="#070A0D" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,414,65.859375,18">Аналитика</div>
+        </a>
+
+      </div><div class="AppSideMenu__menu__down-section-wrap__d061fc47d1fa"><div><div class="AppProfile__profile__d061fc47d1fa"><div class="AppProfile__profile__avatar-wrap__d061fc47d1fa"><div class="g-avatar g-avatar_size_xs g-avatar_theme_normal g-avatar_view_filled AppProfile__profile__avatar__d061fc47d1fa" role="img"><div class="g-avatar__text" listly-xywh="22.125,666,11.75,12">АА</div></div><span class="g-text g-text_variant_body-1 g-color-text g-color-text_color_complementary AppProfile__profile__avatar-text__d061fc47d1fa" listly-xywh="56,663,95.625,18">Учетная запись</span></div><div class="AppProfile__profile__drop__d061fc47d1fa"><div class="AppProfile__profile__user-wrap__d061fc47d1fa"><div class="AppProfile__profile__user-info__d061fc47d1fa"><div class="g-avatar g-avatar_size_s g-avatar_theme_normal g-avatar_view_filled AppProfile__profile__avatar__d061fc47d1fa" role="img"><div class="g-avatar__text" listly-xywh="0,0,0,0">АА</div></div><div class="AppProfile__profile__info__d061fc47d1fa"><span class="g-text g-text_variant_body-1" listly-xywh="0,0,0,0">Адеев А.</span><span class="g-text g-text_variant_caption-2 g-color-text g-color-text_color_secondary" listly-xywh="0,0,0,0">adeev.aa@zhcom.ru</span></div></div></div><div class="AppProfile__profile__modules-wrap__d061fc47d1fa"><a class="AppProfile__profile__item__d061fc47d1fa" href="./html/profile.html"><div class="AppProfile__profile__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppProfile__profile__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="user"><path id="Icon" d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#586677" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppProfile__profile__item-text__d061fc47d1fa" listly-xywh="0,0,0,0">Профиль</div></a><a class="AppProfile__profile__item__d061fc47d1fa" href="./html/visit-card.html"><div class="AppProfile__profile__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppProfile__profile__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5H6.51M17.5 6.5H17.51M6.5 17.5H6.51M13 13H13.01M17.5 17.5H17.51M17 21H21V17M14 16.5V21M21 14H16.5M15.6 10H19.4C19.9601 10 20.2401 10 20.454 9.89101C20.6422 9.79513 20.7951 9.64215 20.891 9.45399C21 9.24008 21 8.96005 21 8.4V4.6C21 4.03995 21 3.75992 20.891 3.54601C20.7951 3.35785 20.6422 3.20487 20.454 3.10899C20.2401 3 19.9601 3 19.4 3H15.6C15.0399 3 14.7599 3 14.546 3.10899C14.3578 3.20487 14.2049 3.35785 14.109 3.54601C14 3.75992 14 4.03995 14 4.6V8.4C14 8.96005 14 9.24008 14.109 9.45399C14.2049 9.64215 14.3578 9.79513 14.546 9.89101C14.7599 10 15.0399 10 15.6 10ZM4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10ZM4.6 21H8.4C8.96005 21 9.24008 21 9.45399 20.891C9.64215 20.7951 9.79513 20.6422 9.89101 20.454C10 20.2401 10 19.9601 10 19.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14H4.6C4.03995 14 3.75992 14 3.54601 14.109C3.35785 14.2049 3.20487 14.3578 3.10899 14.546C3 14.7599 3 15.0399 3 15.6V19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7951 3.54601 20.891C3.75992 21 4.03995 21 4.6 21Z" stroke="#070A0D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div class="AppProfile__profile__item-text__d061fc47d1fa" listly-xywh="0,0,0,0">Моя QR-визитка</div></a></div><div class="AppProfile__profile__item-wrap__d061fc47d1fa"><div class="AppProfile__profile__item__d061fc47d1fa"><div class="AppProfile__profile__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa" style="width: 18px; height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M12 12.75L15.75 9M15.75 9L12 5.25M15.75 9H6.75M6.75 2.25H5.85C4.58988 2.25 3.95982 2.25 3.47852 2.49524C3.05516 2.71095 2.71095 3.05516 2.49524 3.47852C2.25 3.95982 2.25 4.58988 2.25 5.85V12.15C2.25 13.4101 2.25 14.0402 2.49524 14.5215C2.71095 14.9448 3.05516 15.289 3.47852 15.5048C3.95982 15.75 4.58988 15.75 5.85 15.75H6.75" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div class="AppProfile__profile__item-text__d061fc47d1fa" listly-xywh="0,0,0,0">Выйти</div></div></div></div></div></div><div><div class="AppNotification__notification__d061fc47d1fa"><div class="AppNotification__notification__label__d061fc47d1fa"><div class="AppNotification__notification__label-wrap__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppNotification__notification__label-icon__d061fc47d1fa AppNotification__notification__label-icon--stroke__d061fc47d1fa" style="width: 56px; height: 40px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7.01522 15.75C7.54407 16.2168 8.23875 16.5 8.99959 16.5C9.76042 16.5 10.4551 16.2168 10.984 15.75M13.4996 6C13.4996 4.80653 13.0255 3.66193 12.1816 2.81802C11.3377 1.97411 10.1931 1.5 8.99959 1.5C7.80611 1.5 6.66152 1.97411 5.81761 2.81802C4.97369 3.66193 4.49959 4.80653 4.49959 6C4.49959 8.31764 3.91494 9.90447 3.26184 10.9541C2.71093 11.8394 2.43548 12.2821 2.44558 12.4056C2.45676 12.5423 2.48573 12.5944 2.59592 12.6762C2.69543 12.75 3.14403 12.75 4.04123 12.75H13.9579C14.8551 12.75 15.3037 12.75 15.4033 12.6762C15.5134 12.5944 15.5424 12.5423 15.5536 12.4056C15.5637 12.2821 15.2882 11.8394 14.7373 10.9541C14.0842 9.90447 13.4996 8.31764 13.4996 6Z" stroke="black" stroke-opacity="0.3" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span class="g-text g-text_variant_body-1 AppNotification__notification__label-text__d061fc47d1fa" listly-xywh="56,706,83.734375,18">Уведомления</span></div></div></div></div><div class="AppSideMenu__menu__block-wrap__d061fc47d1fa"><a class="AppSideMenu__menu__item__d061fc47d1fa" href="./html/notification.html"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.26344 12.9141L6.65307 13.7904C6.7689 14.0513 6.95792 14.2729 7.19722 14.4284C7.43652 14.584 7.71581 14.6668 8.00122 14.6667C8.28663 14.6668 8.56592 14.584 8.80522 14.4284C9.04452 14.2729 9.23354 14.0513 9.34937 13.7904L9.739 12.9141C9.8777 12.6032 10.111 12.3439 10.4057 12.1734C10.7022 12.0023 11.0452 11.9295 11.3857 11.9652L12.339 12.0667C12.6228 12.0967 12.9092 12.0438 13.1635 11.9143C13.4177 11.7848 13.629 11.5843 13.7716 11.3371C13.9144 11.0901 13.9824 10.8069 13.9674 10.522C13.9524 10.237 13.8551 9.96258 13.6871 9.73189L13.1227 8.95634C12.9217 8.67813 12.8143 8.34325 12.816 8.00004C12.816 7.65777 12.9244 7.32427 13.1257 7.04745L13.6901 6.27189C13.858 6.04121 13.9554 5.76675 13.9704 5.48182C13.9854 5.19689 13.9173 4.91373 13.7746 4.66671C13.632 4.41953 13.4207 4.21903 13.1664 4.08953C12.9121 3.96002 12.6257 3.90706 12.342 3.93708L11.3886 4.03856C11.0482 4.07431 10.7052 4.00145 10.4086 3.83041C10.1134 3.65888 9.88001 3.39828 9.74196 3.08597L9.34937 2.20967C9.23354 1.94882 9.04452 1.72718 8.80522 1.57164C8.56592 1.4161 8.28663 1.33333 8.00122 1.33337C7.71581 1.33333 7.43652 1.4161 7.19722 1.57164C6.95792 1.72718 6.7689 1.94882 6.65307 2.20967L6.26344 3.08597C6.1254 3.39828 5.89202 3.65888 5.59678 3.83041C5.30025 4.00145 4.95722 4.07431 4.61678 4.03856L3.66048 3.93708C3.3767 3.90706 3.09031 3.96002 2.83602 4.08953C2.58174 4.21903 2.37049 4.41953 2.22789 4.66671C2.0851 4.91373 2.01708 5.19689 2.03207 5.48182C2.04705 5.76675 2.14441 6.04121 2.31233 6.27189L2.87678 7.04745C3.07807 7.32427 3.18647 7.65777 3.18641 8.00004C3.18647 8.34232 3.07807 8.67581 2.87678 8.95263L2.31233 9.72819C2.14441 9.95887 2.04705 10.2333 2.03207 10.5183C2.01708 10.8032 2.0851 11.0863 2.22789 11.3334C2.37063 11.5804 2.58191 11.7808 2.83615 11.9103C3.0904 12.0398 3.37672 12.0928 3.66048 12.063L4.61381 11.9615C4.95426 11.9258 5.29729 11.9986 5.59381 12.1697C5.89017 12.3407 6.12462 12.6014 6.26344 12.9141Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /><path d="M8.00003 10C9.1046 10 10 9.10461 10 8.00004C10 6.89547 9.1046 6.00004 8.00003 6.00004C6.89546 6.00004 6.00003 6.89547 6.00003 8.00004C6.00003 9.10461 6.89546 10 8.00003 10Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,746,66.125,18">Настройки</div></a></div></div><div class="AppSideMenu__menu__item__d061fc47d1fa"><div class="AppSideMenu__menu__icon__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__item-icon--stroke__d061fc47d1fa" style="width: 18px; height: 18px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="message-check-circle"><path id="Icon" d="M7.12496 8.625L8.62496 10.125L12 6.75M9.37496 15C12.8958 15 15.75 12.1458 15.75 8.625C15.75 5.10418 12.8958 2.25 9.37496 2.25C5.85415 2.25 2.99996 5.10418 2.99996 8.625C2.99996 9.3375 3.11685 10.0227 3.33249 10.6625C3.41364 10.9032 3.45421 11.0236 3.46153 11.1161C3.46876 11.2074 3.4633 11.2714 3.4407 11.3602C3.41782 11.4501 3.36731 11.5436 3.26628 11.7306L2.03954 14.0013C1.86456 14.3252 1.77706 14.4871 1.79665 14.6121C1.8137 14.7209 1.87777 14.8168 1.97184 14.8742C2.07985 14.9401 2.26294 14.9211 2.62912 14.8833L6.46989 14.4863C6.5862 14.4742 6.64435 14.4682 6.69736 14.4703C6.74949 14.4722 6.7863 14.4771 6.83714 14.4889C6.88883 14.5008 6.95383 14.5258 7.08383 14.5759C7.79487 14.8498 8.56738 15 9.37496 15Z" stroke="black" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></g></svg></div></div><div class="AppSideMenu__menu__item-text__d061fc47d1fa" listly-xywh="56,786,96.484375,18">Обратная связь</div></div><div class="AppSideMenu__menu__toggle-btn-wrap__d061fc47d1fa" role="button" tabindex="0"><div class="fui-icon__fui-icon__d061fc47d1fa AppSideMenu__menu__toggle-btn-icon__d061fc47d1fa" style="width: 56px; height: 40px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M13.5 12.75L10.8814 10.1314C10.4854 9.73535 10.2873 9.53735 10.2132 9.30902C10.1479 9.10817 10.1479 8.89183 10.2132 8.69098C10.2873 8.46265 10.4854 8.26465 10.8814 7.86863L13.5 5.25M8.25 12.75L5.63137 10.1314C5.23535 9.73535 5.03735 9.53735 4.96316 9.30902C4.8979 9.10817 4.8979 8.89183 4.96316 8.69098C5.03735 8.46265 5.23535 8.26465 5.63137 7.86863L8.25 5.25" stroke="black" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span class="g-text g-text_variant_caption-2 g-color-text g-color-text_color_hint" listly-xywh="56,859.5,71.109375,16">Скрыть меню</span></div></div></div><div class="main-app-container__content"><div class="DesktopContentLayout__layout__d061fc47d1fa"><div class="DesktopContentLayout__layout__header__d061fc47d1fa"><div class="AppContentHeader__content-header__d061fc47d1fa"><div class="AppContentHeader__content-header__title__d061fc47d1fa"><button class="g-button g-button_view_flat g-button_size_m g-button_pin_circle-circle AppContentHeader__content-header__title-button__d061fc47d1fa" type="button" data-hover-hint=""><div class="fui-icon__fui-icon__d061fc47d1fa" style="width: 24px; height: 24px;"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z" fill="#f00" /></svg></div></button><div class="breadcrumbs__breadcrumbs__d061fc47d1fa AppContentHeader__content-header__title-breadcrumbs__d061fc47d1fa"><div class="breadcrumbs__breadcrumb__item__d061fc47d1fa"><a href="/" listly-xywh="289,22,49.421875,15">Главная</a></div><span class="breadcrumbs__breadcrumb__divider__d061fc47d1fa" listly-xywh="342.421875,21,5.359375,18">/</span><div class="breadcrumbs__breadcrumb__item__d061fc47d1fa breadcrumbs__breadcrumb__item--active__d061fc47d1fa"><a href="./html/indicators.html" listly-xywh="351.78125,22,72,15">Показатели</a></div></div></div><div class="AppContentHeader__content-header__actions__d061fc47d1fa"></div></div>
+
+      <!-- <div role="tablist" class="g-tabs g-tabs_direction_horizontal g-tabs_size_m AppAnalyticsTabsNavigation__analytics-tabs-navigation__d061fc47d1fa"><div role="tab" aria-selected="true" aria-disabled="false" tabindex="0" class="g-tabs__item g-tabs__item_active" title="Показатели"><div class="g-tabs__item-content"><div class="g-tabs__item-title" listly-xywh="253,57,72,18">Показатели</div></div></div><div role="tab" aria-selected="false" aria-disabled="false" tabindex="0" class="g-tabs__item" title="Справочники"><div class="g-tabs__item-content"><div class="g-tabs__item-title" listly-xywh="349,57,81.765625,18">Справочники</div></div></div><div role="tab" aria-selected="false" aria-disabled="false" tabindex="0" class="g-tabs__item" title="Дашборды"><div class="g-tabs__item-content"><div class="g-tabs__item-title" listly-xywh="454.765625,57,67.078125,18">Дашборды</div></div></div></div> -->
+
+
+    </div>
+   <!--  <div class="AnalyticsIndicators__analytics-indicators__d061fc47d1fa"><span class="g-text g-text_variant_body-1" listly-xywh="253,100,1192,18">
+        asdad
+      </span></div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <iframe src="bim/" style="width: 100%; height: calc(100% - 48px);"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><div class="AppMeetContainer__meet-content__wrapper__d061fc47d1fa AppMeetContainer__meet-content__wrapper--popup__d061fc47d1fa"><div class="AppMeetContainer__meet-content__header__d061fc47d1fa" style="cursor: grab;"><button class="fui-button__fui-button__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa" style="width: 24px; height: 24px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_19011_18032)"><path d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM14.14 11.86L11.14 15.73L9 13.14L6 17H18L14.14 11.86Z" fill="#f00" /></g><defs><clippath id="clip0_19011_18032"><rect width="24" height="24" fill="#f00" /></clippath></defs></svg></div></button><button class="fui-button__fui-button__d061fc47d1fa"><div class="fui-icon__fui-icon__d061fc47d1fa" style="width: 24px; height: 24px;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#f00" /></svg></div></button></div><div class="AppMeetContainer__meet-content__content__d061fc47d1fa"><div class="main-app-container__meet-content"></div></div></div></div><div class="main-app-container__alert-popup"></div></div></div>
+  
+
+  
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    window.yaMetricId = null;
+
+    if (location.host === 'fe.zhcom.ru') {
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(99820862, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+      });
+
+      window.yaMetricId = 99820862;
+    }
+  </script>
+  <noscript>
+    <div><img src="/watch/99820862" style="position:absolute; left:-9999px;" alt=""></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+
+
+<div id="listly-wrapper" style="top: 0px; left: 0px; position: absolute; z-index: 2147483646; pointer-events: none;"><div id="listly-canvas" style="position: absolute;"></div></div></body></html>
