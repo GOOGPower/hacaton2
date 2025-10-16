@@ -5,10 +5,56 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>bim</title>
-		<script type="module" crossorigin src="/assets/index-B1sAmmvk.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-flsSiORN.css">
+		<script type="module" crossorigin src="/assets/index-xyzQmdyI.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-BKjpaTGS.css">
 	</head>
 	<body>
-		<div id="app"><div class="full-screen" id="container"></div></div>
+		<div id="app">
+			<div class="full-screen" id="container"></div>
+
+			<div>
+				<br>
+				<div class="left">
+					<label>Виды работ</label>
+					<select>
+						<option>забивка свай</option>
+						<option>устройство ростверка</option>
+						<option>кирпичная кладка</option>
+					</select>
+				</div>
+				<br>
+				<div class="data-box">
+					<h1>Сводные данные</h1>
+					<div id="data">
+						<table>
+							<tr><th>Факт: </th><td>450</td></tr>
+							<tr><th>План: </th><td>500</td></tr>
+							<tr><th>Отклонение: </th><td style="color: red;">50</td></tr>
+						</table>
+					</div>
+					<div class="left">
+						<button>Показать на макете</button>
+					</div>
+					<h1>Прогноз погоды</h1>
+					<table>
+						<tr>
+							<th>День</th>
+							<th>Температура</th>
+							<th>Ветер</th>
+						</tr>
+						<tr>
+							<td>16.10</td>
+							<td>-10</td>
+							<td>Север</td>
+						</tr>
+					</table>
+					<br><br><br><br><br><br><br><br>
+				</div>
+			</div>
+			<div id="toolbar">
+				<button id="toggle-fullscreen"></button>
+				<button id="play-animation-rotate">Анимация</button>
+			</div>
+		</div>
 	</body>
 </html>
