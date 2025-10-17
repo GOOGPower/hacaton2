@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, send_file
+from flask import Flask, send_from_directory, send_file, request
 import os
 from pathlib import Path
 import requests
@@ -336,7 +336,7 @@ def serve_assets(filename):
 
 @app.route("/api/weather", methods=["POST"])
 def get_weather():
-    date = request.form["date"]
+    date = request.form.get("date")
     if not date:
         return {"error": "Не указано дата"}, 400
     
