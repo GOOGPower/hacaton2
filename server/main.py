@@ -336,7 +336,7 @@ def serve_assets(filename):
 
 @app.route("/api/weather", methods=["POST"])
 def get_weather():
-    date = request.args.get("date")
+    date = request.form["date"]
     if not date:
         return {"error": "Не указано дата"}, 400
     
