@@ -5,8 +5,8 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>bim</title>
-		<script type="module" crossorigin src="/assets/bim-7ek_uElA.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/bim-BKjpaTGS.css">
+		<script type="module" crossorigin src="/assets/bim-CdIj7SmO.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/bim-CB1EQgwl.css">
 	</head>
 	<body>
 		<div id="app">
@@ -16,13 +16,35 @@
 			<div>
 				<br>
 				<div class="left">
-					<label>Виды работ</label>
-					<select id="select-section"></select>
-					<select id="select-packet"></select>
-					<select id="select-floor"></select>
+					<!-- <div class="spilt50"> -->
+						<!-- <div> -->
+							<span id="status-info" style="color: red; font-weight: bold; font-size: 150%;">Просрок</span>
+							<h1>Параметры</h1>
+							<div class="settings">
+								<label>Номер секции</label> 	<select id="select-section"></select>
+								<label>Пакет работ</label> 		<select id="select-packet"></select>
+								<label>Номер захватки</label> 	<select id="select-floor"></select>
+							</div>
+		
+							<h1>Контрольные точки</h1>
+		
+							<div class="settings">
+								<b>Дата старта</b> 	<span id="floor-start"></span>
+								<b>Дата плана</b> 		<span id="floor-plan"></span>
+								<b>Дата завершения</b> 	<span id="floor-fact"></span>
+							</div>
+		
+							<h1>Ответсвенные лица</h1>
+							<table id='persons'></table>
+						<!-- </div> -->
+						<!-- <div>
+							<h1>Исполнители</h1>
+							<table id='persons2'></table>
+						</div> -->
+					<!-- </div> -->
 				</div>
 				<br>
-				<div class="data-box">
+				<!-- <div class="data-box">
 					<h1>Сводные данные</h1>
 					<div id="data">
 						<table>
@@ -47,8 +69,8 @@
 							<td>Север</td>
 						</tr>
 					</table>
+				</div> -->
 					<br><br><br><br><br><br><br><br>
-				</div>
 			</div>
 			<div id="toolbar">
 				<button id="toggle-fullscreen"></button>
