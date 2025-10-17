@@ -343,7 +343,7 @@ def get_weather():
     weather = weather_api.get_weather(date)
     return weather
 
-@app.route("/api/types_of_work", methods=["POST"])
+'''@app.route("/api/types_of_work", methods=["POST"])
 def get_work():
     api = GoogleSheetsAPI(SHEET_ID)
     data_array = api.get_columns_data(SHEET_GID)
@@ -362,7 +362,7 @@ def get_work():
                 dist[f].append(data_array[1][i])
                 print(f"  - {data_array[1][i]}")
         i+=1
-    return dist
+    return dist'''
 
 
 
