@@ -28,6 +28,8 @@ const post = async (url:ApiPath, data:any) => await (await fetch(`/api/${url}`, 
 })).json();
 
 const weather = async (date:Date) => await post('weather', { 
-	date: date 
+	date: date.toLocaleDateString('en-CA')
 });
+
+
 
