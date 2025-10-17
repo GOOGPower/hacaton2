@@ -334,7 +334,7 @@ def serve_assets(filename):
     """Специальный маршрут для папки assets"""
     return send_from_directory(DIST_PATH / 'assets', filename)
 
-@app.route("/api/weather", methods=["GET"])
+@app.route("/api/weather", methods=["POST"])
 def get_weather():
     date = request.args.get("date")
     if not date:
@@ -342,6 +342,29 @@ def get_weather():
     
     weather = weather_api.get_weather(date)
     return weather
+
+@app.route("/api/types_of_work", methods=["POST"])
+def get_work():
+    api = GoogleSheetsAPI(SHEET_ID)
+    data_array = api.get_columns_data(SHEET_GID)
+    i = 307
+    f = ""
+    dist = {}
+    while i<385:
+        if data_array[1][i] != "2 этап планирования":
+            try:
+                float(data_array[3][i].replace(",","."))
+                print(data_array[1][i])
+                f = data_array[1][i]
+                dist[f] = []
+                
+            except:
+                dist[f].append(data_array[1][i])
+                print(f"  - {data_array[1][i]}")
+        i+=1
+    return dist
+
+
 
 if __name__ == '__main__':
     PORT = 3000
