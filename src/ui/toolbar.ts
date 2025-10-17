@@ -11,10 +11,13 @@ const fullscreenText = ["Полный экран", "Обычный режим"];
 const updateSelection = function<T>(
 		elementId:string, 
 		options:Array<T>, toContent:(o:T,id:number)=>string,
-		listener:(value:T) => void,
+		listener:(value:T, all:boolean) => void,
+		all=false
 	) {
 
 	let eSelect = document.getElementById(elementId) as HTMLSelectElement;
+	const lVal = eSelect.value;
+	console.log(lVal);
 	eSelect.innerHTML = "";
 	let oid = 0;
 	for(let option of options) {
@@ -25,12 +28,20 @@ const updateSelection = function<T>(
 
 		oid++;
 	}
+	if(all) {
+		let eOption = document.createElement('option');
+		eOption.textContent = "Все";
+		eOption.value = `-1`;
+		eSelect.appendChild(eOption);
+	}
+	if(lVal != '') eSelect.value = lVal;
 
+	let lastSelected:T = options[0];
 	eSelect.onchange = () => {
-		listener(options[parseInt(eSelect.value)]);
+		if(eSelect.value != '-1') lastSelected = options[parseInt(eSelect.value)];
+		listener(lastSelected, eSelect.value == '-1');
 	};
-	// console.log(`value: "${eSelect.value}"`);
-	if(eSelect.value == '0') listener(options[0]);
+	if(eSelect.value == '0') listener(lastSelected, false);
 }
 
 export default function initToolbar() {
@@ -54,11 +65,10 @@ export default function initToolbar() {
 		if(e && cons) cons(e);
 	}
 
-	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, s => {
-		console.log(s);
+	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, (s, sAny) => {
 		updateSelection<Database.PacketType>('select-packet', s.packets, (p) => `${p.name}`, p => {
-			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, f => {
-				WorldState.floors.forEach(obj => obj.enable(obj.section == s && obj.packet == p && obj.floor == f));
+			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, (f, fAny) => {
+				WorldState.floors.forEach(obj => obj.enable((obj.section == s || sAny) && obj.packet.name == p.name && (obj.floor.id == f.id || fAny)));
 				updateText('floor-start', f.start.toLocaleDateString('ru-RU'));
 				updateText('floor-plan', f.plan.toLocaleDateString('ru-RU'));
 				updateText('floor-fact', f.fact == undefined ? "Не готово" : f.fact.toLocaleDateString('ru-RU'));
@@ -104,10 +114,9 @@ export default function initToolbar() {
        				eBan.textContent = "Напрваить письмо";
        				eRow.insertCell().appendChild(eBan);
 				}
-
-			});
+			}, true);
 		});
-	});
+	}, true);
 
 	// eFloorSelect.addEventListener('change', () => selectFloor(parseInt(eFloorSelect.value)));
 

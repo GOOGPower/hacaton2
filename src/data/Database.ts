@@ -26,6 +26,7 @@ export type PersonType = {
 }
 
 export type FloorType = {
+	id?:number, // autoset
 	height: number,
 	start: Date,
 	fact?: Date,
@@ -57,9 +58,9 @@ export const sections:Array<SectionType> = [
 						plan:  new Date("2025.01.01"), 
 						fact:  new Date("2025.01.01"),
 						persons: [
-							{type: "Тех. надзор", name: "Петров", contact: "	+7(999)999 99-99"},
-							{type: "УСМР", name: "Сидоров", contact: "	+7(999)999 99-99"},
-							{type: "ИП Иванов", name: "Иванов", contact: "	+7(999)999 99-99"},
+							{type: "Тех. надзор", 	name: "Петров", 	contact: "	+7(999)999 99-99"},
+							{type: "УСМР", 			name: "Сидоров", 	contact: "	+7(999)999 99-99"},
+							{type: "ИП Иванов", 	name: "Иванов", 	contact: "	+7(999)999 99-99"},
 						]
 					},
 					{
@@ -378,6 +379,23 @@ export const sections:Array<SectionType> = [
 	}
 
 ];
+
+const createWorkTypes = () => {
+	let set:any = {};
+	for(let s of sections) {
+		for(let p of s.packets) {
+			set[p.name] = p.name;
+		}
+	}
+	return Object.keys(set);
+}
+export const workTypes:Array<string> = createWorkTypes();
+
+sections.forEach((s) => {
+	s.packets.forEach(p => {
+		p.floors.forEach((f,fi) => f.id = fi);
+	})
+});
 
 
 // export const database:Array<WorkType> = [
