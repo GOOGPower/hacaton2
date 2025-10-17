@@ -8,5 +8,5 @@ import initToolbar from './ui/toolbar';
 // import {Vector3} from 'three';
 import { initWorld } from './world/world';
 
-initWorld();
-initToolbar();
+await initWorld();
+await initToolbar();

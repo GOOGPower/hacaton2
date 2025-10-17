@@ -4,7 +4,7 @@ import { Vector2, Vector3 } from "three";
 type Box = { position: Vector3, size: Vector3 }
 
 export type Path = Array<{x:number, y:number}>
-export type SectionType = {
+export type SectionTypeOld = {
 	plan:number, // per week
 	fact:number, // per week
 	height:number,
@@ -19,7 +19,7 @@ export type WorkType = {
 const sectionHeight = 37;
 const sectionFloors = 8;
 
-type FloorType = {
+export type FloorType = {
 	height: number,
 	start: Date,
 	fact: Date,
@@ -27,17 +27,17 @@ type FloorType = {
 	ready: boolean,
 }
 
-type PacketType = {
+export type PacketType = {
 	name: string,
 	floors: Array<FloorType>
 }
 
-type SelectionType = {
+export type SectionType = {
 	packets:Array<PacketType>,
 	path: Array<Array<number>>,
 }
 
-export const sections:Array<SelectionType> = [
+export const sections:Array<SectionType> = [
 	{
 		packets: [
 			{
@@ -45,11 +45,60 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 5,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
-					}
+					},
+					{
+						ready: false,
+						height: 4,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					},
 				]
 			},
 			{
@@ -57,7 +106,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -69,7 +118,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -81,7 +130,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -93,7 +142,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -105,7 +154,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -127,7 +176,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -139,7 +188,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -151,7 +200,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -163,7 +212,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -175,7 +224,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -187,7 +236,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 8, 1), 
 						fact: new Date(2025, 8, 15),
@@ -196,10 +245,10 @@ export const sections:Array<SelectionType> = [
 			}
 		],
 		path: [
-			[ 0,		0	 ],
 			[ 25.9,		20.3 ],
+			[ 51.6,		40.7 ],
+			[ 41.3,		53.3 ],
 			[ 15.9,		33.2 ],
-			[ -10.5,	12.8 ],
 		]
 	},
 	{
@@ -209,7 +258,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -221,7 +270,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -233,7 +282,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -245,7 +294,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -257,7 +306,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -269,7 +318,7 @@ export const sections:Array<SelectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 100,
+						height: 3,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 9, 1), 
 						fact: new Date(2025, 9, 15),
@@ -278,78 +327,80 @@ export const sections:Array<SelectionType> = [
 			}
 		],
 		path: [
-			[ 0,		0	 ],
-			[ 25.9,		20.3 ],
-			[ 15.9,		33.2 ],
-			[ -10.5,	12.8 ],
+			[ 51.6,		40.7 ],
+			[ 60.6,		50.9 ],
+			[ 60.6,		75.8 ],
+			[ 49.2,		75.8 ],
+			[ 49.2,		58.2 ],
+			[ 41.3,		53.3 ],
 		]
 	}
 
 ];
 
 
-export const database:Array<WorkType> = [
-	{ 
-		name: 'Перегородки',
-		sections: [
-			// section1,
-			{
-				// 1
-				plan: 500,
-				fact: 450,
-				height: sectionHeight,
-				floors: sectionFloors,
-				path: [
-					[ 0,		0	 ],
-					[ 25.9,		20.3 ],
-					[ 15.9,		33.2 ],
-					[ -10.5,	12.8],
-					// [ 0,		0  ],
-					// [ 10,		0 ],
-					// [ 10,		10 ],
-					// [ 0,		10],
-				]
-			},
-			{
-				// 2
-				plan: 500,
-				fact: 450,
-				height: sectionHeight,
-				floors: sectionFloors,
-				path: [
-					[ 25.9,		20.3 ],
-					[ 51.6,		40.7 ],
-					[ 41.3,		53.3 ],
-					[ 15.9,		33.2 ],
-				]
-			},
-			{
-				// 3
-				plan: 500,
-				fact: 450,
-				height: sectionHeight,
-				floors: sectionFloors,
-				path: [
-					[ 51.6,		40.7 ],
-					[ 60.6,		50.9 ],
-					[ 60.6,		75.8 ],
-					[ 49.2,		75.8 ],
-					[ 49.2,		58.2 ],
-					[ 41.3,		53.3 ],
-				]
-			}
-		]
-	},
-	{ 
-		name: 'Перегородки2',
-		sections: []
-	},
-	// { name: 'Отделка наружная' },
-	// { name: 'Остекление окон' },
-	// { name: 'Несущие стены' },
-	// { name: 'Покрытие кровли' },
-	// { name: 'Витражи' },
-];
+// export const database:Array<WorkType> = [
+// 	{ 
+// 		name: 'Перегородки',
+// 		sections: [
+// 			// section1,
+// 			{
+// 				// 1
+// 				plan: 500,
+// 				fact: 450,
+// 				height: sectionHeight,
+// 				floors: sectionFloors,
+// 				path: [
+// 					[ 0,		0	 ],
+// 					[ 25.9,		20.3 ],
+// 					[ 15.9,		33.2 ],
+// 					[ -10.5,	12.8],
+// 					// [ 0,		0  ],
+// 					// [ 10,		0 ],
+// 					// [ 10,		10 ],
+// 					// [ 0,		10],
+// 				]
+// 			},
+// 			{
+// 				// 2
+// 				plan: 500,
+// 				fact: 450,
+// 				height: sectionHeight,
+// 				floors: sectionFloors,
+// 				path: [
+// 					[ 25.9,		20.3 ],
+// 					[ 51.6,		40.7 ],
+// 					[ 41.3,		53.3 ],
+// 					[ 15.9,		33.2 ],
+// 				]
+// 			},
+// 			{
+// 				// 3
+// 				plan: 500,
+// 				fact: 450,
+// 				height: sectionHeight,
+// 				floors: sectionFloors,
+// 				path: [
+// 					[ 51.6,		40.7 ],
+// 					[ 60.6,		50.9 ],
+// 					[ 60.6,		75.8 ],
+// 					[ 49.2,		75.8 ],
+// 					[ 49.2,		58.2 ],
+// 					[ 41.3,		53.3 ],
+// 				]
+// 			}
+// 		]
+// 	},
+// 	{ 
+// 		name: 'Перегородки2',
+// 		sections: []
+// 	},
+// 	// { name: 'Отделка наружная' },
+// 	// { name: 'Остекление окон' },
+// 	// { name: 'Несущие стены' },
+// 	// { name: 'Покрытие кровли' },
+// 	// { name: 'Витражи' },
+// ];
 
 // export const sections:Array<{position:Vector3, size:Vector3}> = [
 // 	{

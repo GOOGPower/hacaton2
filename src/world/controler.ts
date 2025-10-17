@@ -96,11 +96,10 @@ export default function initController() {
 			tmpVector3.normalize();
 
 			position.add(velosity);
+			console.log(position);
 
 			look.set(position.x, position.y, position.z);
 			look.add(tmpVector3);
-
-			// WorldControl.cube?.position.set(look.x, look.y, look.z);
 
 			await World.camera.controls.setLookAt(position.x, position.y, position.z, look.x, look.y, look.z);
 
