@@ -3,6 +3,7 @@ import * as OBC from "@thatopen/components";
 import * as THREE from 'three';
 import initController from './controler';
 import { fog } from "three/tsl";
+import * as Database from "../data/Database";
 
 const config = {
 	frag: 'R241.frag', //'school_arq.frag',//"",
@@ -42,10 +43,87 @@ export async function initWorld() {
 	initController();
 
 
-	const tMaterial = new THREE.MeshLambertMaterial({ color: "#6528D7", transparent: true, opacity: .5 });
-	const geometry = new THREE.BoxGeometry(50,25,50);
-	const cube = new THREE.Mesh(geometry, tMaterial);
-	World.scene.three.add(cube);
+	// const tMaterial = new THREE.MeshLambertMaterial({ color: "#6528D7", transparent: true, opacity: .5 });
+	// const geometry = new THREE.BoxGeometry(50,25,50);
+	// const cube = new THREE.Mesh(geometry, tMaterial);
+	// World.scene.three.add(cube);
+
+
+	// await World.camera.controls.setLookAt(100, 0, 100, Database.sections[0].position.x, Database.sections[0].position.y, Database.sections[0].position.z);
+
+	for(let section of Database.sections) {
+		const geometry = new THREE.BoxGeometry(section.size.x,section.size.y,section.size.z);
+		(() => {
+			const tMaterial = new THREE.MeshLambertMaterial({ 
+				color: "#6528D7", 
+				transparent: true, 
+				opacity: .25,
+				depthTest: false,
+			});
+			const cube = new THREE.Mesh(geometry, tMaterial);
+			cube.position.set(section.position.x, section.position.y, section.position.z);
+			// cube.renderOrder = 1;
+			World.scene.three.add(cube);
+
+			const egeometry = new THREE.EdgesGeometry(geometry);
+			const lines = new THREE.LineSegments(
+			    egeometry,
+			    new THREE.LineBasicMaterial({ color: 0xff0000, side: THREE.BackSide, linewidth: 20 })
+			)
+			// lines.renderOrder = 1;
+			cube.add(lines);
+		})();
+
+		(() => {
+			const tMaterial = new THREE.MeshLambertMaterial({ 
+				color: "#6528D7", 
+				transparent: true, 
+				opacity: .25,
+			});
+			const cube = new THREE.Mesh(geometry, tMaterial);
+			cube.position.set(section.position.x, section.position.y, section.position.z);
+			World.scene.three.add(cube);
+
+		})();
+
+		
+
+		// cube.add(new THREE.LineSegments(
+		//     egeometry,
+		//     new THREE.LineBasicMaterial({ color: 0x000000, side: THREE.BackSide, linewidth: 2 })
+		// ));
+
+		// Контурный материал
+		// const outlineMaterial = new THREE.ShaderMaterial({
+		//     uniforms: {
+		//         outlineColor: { value: new THREE.Color(0xff0000) }, // Красный
+		//         outlineThickness: { value: 0.01 }
+		//     },
+		//     vertexShader: `
+		//         varying vec3 vNormal;
+		//         uniform float outlineThickness;
+		
+		//         void main() {
+		//             vNormal = normalize(normal);
+		//             vec3 outlineVertex = position - vNormal * outlineThickness; // Инвертированная нормаль
+		//             gl_Position = projectionMatrix * modelViewMatrix * vec4(outlineVertex, 1.0);
+		//         }
+		//     `,
+		//     fragmentShader: `
+		//         uniform vec3 outlineColor;
+		
+		//         void main() {
+		//             gl_FragColor = vec4(outlineColor, 1.0);
+		//         }
+		//     `,
+		//     side: THREE.BackSide // Важно: рисуем только задние грани
+		// });
+		
+		// const outlineMesh = new THREE.Mesh(geometry.clone(), outlineMaterial); // Клонируем геометрию
+		// outlineMesh.renderOrder = 2; // Высокий приоритет, чтобы рисоваться поверх
+		// World.scene.three.add(outlineMesh);
+	}
+
 
 	const objectAddListener = (e:{child:THREE.Object3D}) => {
 		const obj = e.child;
@@ -119,6 +197,7 @@ export async function initWorld() {
 		);
 	}
 	const material = new THREE.MeshLambertMaterial({ color: "#6528D7" });
+
 
 	const eachObject = (obj:THREE.Object3D) => {
 		// console.log(obj.children.length);

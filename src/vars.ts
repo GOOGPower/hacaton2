@@ -4,7 +4,7 @@ const Vars = {
 
 	animation: {
 		rotate: {
-			playing: true,
+			playing: false,
 			enabled: false,
 		}
 	}
