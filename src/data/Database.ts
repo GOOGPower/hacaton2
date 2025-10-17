@@ -41,14 +41,238 @@ export const sections:Array<SelectionType> = [
 	{
 		packets: [
 			{
-				name: "Перегородки",
+				name: "Витражи",
 				floors: [
 					{
 						ready: false,
 						height: 100,
-						start: new Date(), 
-						plan: new Date(), 
-						fact: new Date(),
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			},
+			{
+				name: "Несущие стены",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка наружная",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка внутренняя",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+					}
+				]
+			}
+		],
+		path: [
+			[ 0,		0	 ],
+			[ 25.9,		20.3 ],
+			[ 15.9,		33.2 ],
+			[ -10.5,	12.8 ],
+		]
+	},
+	{
+		packets: [
+			{
+				name: "Витражи",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			},
+			{
+				name: "Несущие стены",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка наружная",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка внутренняя",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 8, 1), 
+						fact: new Date(2025, 8, 15),
+					}
+				]
+			}
+		],
+		path: [
+			[ 0,		0	 ],
+			[ 25.9,		20.3 ],
+			[ 15.9,		33.2 ],
+			[ -10.5,	12.8 ],
+		]
+	},
+	{
+		packets: [
+			{
+				name: "Витражи",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
+					}
+				]
+			},
+			{
+				name: "Несущие стены",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка наружная",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
+					}
+				]
+			},
+			{
+				name: "Остекление окон",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
+					}
+				]
+			},
+			{
+				name: "Отделка внутренняя",
+				floors: [
+					{
+						ready: false,
+						height: 100,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 9, 1), 
+						fact: new Date(2025, 9, 15),
 					}
 				]
 			}
@@ -61,33 +285,6 @@ export const sections:Array<SelectionType> = [
 		]
 	}
 
-	// {
-	// 	packets: [
-	// 		{
-	// 			name: "Перегородки"
-	// 		}
-	// 	],
-	// 	path: [
-	// 		[ 25.9,		20.3 ],
-	// 		[ 51.6,		40.7 ],
-	// 		[ 41.3,		53.3 ],
-	// 		[ 15.9,		33.2 ],
-	// 	]
-	// }, {
-	// 	packets: [
-	// 		{
-	// 			name: "Перегородки"
-	// 		}
-	// 	],
-	// 	path: [
-	// 		[ 51.6,		40.7 ],
-	// 		[ 60.6,		50.9 ],
-	// 		[ 60.6,		75.8 ],
-	// 		[ 49.2,		75.8 ],
-	// 		[ 49.2,		58.2 ],
-	// 		[ 41.3,		53.3 ],
-	// 	]
-	// }
 ];
 
 
