@@ -19,12 +19,19 @@ export type WorkType = {
 const sectionHeight = 37;
 const sectionFloors = 8;
 
+export type PersonType = {
+	type: string,
+	name: string,
+	contact: string,
+}
+
 export type FloorType = {
 	height: number,
 	start: Date,
-	fact: Date,
+	fact?: Date,
 	plan: Date,
 	ready: boolean,
+	persons: Array<PersonType>
 }
 
 export type PacketType = {
@@ -46,16 +53,54 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 5,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.01.01"), 
+						fact:  new Date("2025.01.01"),
+						persons: [
+							{type: "Тех. надзор", name: "Петров", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Сидоров", contact: "	+7(999)999 99-99"},
+							{type: "ИП Иванов", name: "Иванов", contact: "	+7(999)999 99-99"},
+						]
 					},
 					{
 						ready: false,
 						height: 4,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.16"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date("2025.01.01"),
+						plan:  new Date("2025.10.17"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.18"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.19"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.20"), 
+						fact:  undefined,
+						persons: [],
 					},
 					{
 						ready: false,
@@ -63,6 +108,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					},
 					{
 						ready: false,
@@ -70,34 +116,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
-					},
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-					},
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-					},
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-					},
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
+						persons: [],
 					},
 				]
 			},
@@ -110,6 +129,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					}
 				]
 			},
@@ -122,6 +142,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					}
 				]
 			},
@@ -134,6 +155,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					}
 				]
 			},
@@ -146,6 +168,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					}
 				]
 			},
@@ -158,6 +181,7 @@ export const sections:Array<SectionType> = [
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
+						persons: [],
 					}
 				]
 			}
@@ -169,17 +193,22 @@ export const sections:Array<SectionType> = [
 			[ -10.5,	12.8 ],
 		]
 	},
+	// 2 section
 	{
 		packets: [
 			{
 				name: "Витражи",
 				floors: [
 					{
-						ready: false,
+						ready: true,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [
+							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
+						],
 					}
 				]
 			},
@@ -189,9 +218,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
 					}
 				]
 			},
@@ -201,9 +231,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
 					}
 				]
 			},
@@ -213,9 +244,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
 					}
 				]
 			},
@@ -225,9 +257,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
 					}
 				]
 			},
@@ -237,9 +270,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 8, 1), 
-						fact: new Date(2025, 8, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
 					}
 				]
 			}
@@ -251,6 +285,7 @@ export const sections:Array<SectionType> = [
 			[ 15.9,		33.2 ],
 		]
 	},
+	// 3 section
 	{
 		packets: [
 			{
@@ -259,9 +294,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  undefined,
+						persons: [],
 					}
 				]
 			},
@@ -271,9 +307,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  new Date("2025.10.10"), // 10 oct
+						persons: [],
 					}
 				]
 			},
@@ -283,9 +320,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  undefined,
+						persons: [],
 					}
 				]
 			},
@@ -295,9 +333,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  undefined,
+						persons: [],
 					}
 				]
 			},
@@ -307,9 +346,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  undefined,
+						persons: [],
 					}
 				]
 			},
@@ -319,9 +359,10 @@ export const sections:Array<SectionType> = [
 					{
 						ready: false,
 						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 9, 1), 
-						fact: new Date(2025, 9, 15),
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.15"), 
+						fact:  undefined,
+						persons: [],
 					}
 				]
 			}

@@ -48,12 +48,63 @@ export default function initToolbar() {
 		};
 	}
 
+	const updateText = (id:string, value:string, cons?: (e:HTMLElement)=>void) => {
+		let e = document.getElementById(id);
+		if(e) e.textContent = value;
+		if(e && cons) cons(e);
+	}
 
 	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, s => {
 		console.log(s);
 		updateSelection<Database.PacketType>('select-packet', s.packets, (p) => `${p.name}`, p => {
 			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, f => {
 				WorldState.floors.forEach(obj => obj.enable(obj.section == s && obj.packet == p && obj.floor == f));
+				updateText('floor-start', f.start.toLocaleDateString('ru-RU'));
+				updateText('floor-plan', f.plan.toLocaleDateString('ru-RU'));
+				updateText('floor-fact', f.fact == undefined ? "Не готово" : f.fact.toLocaleDateString('ru-RU'));
+
+				updateText('status-info', "", e => {
+					if(f.fact) {
+						e.style.color = 'var(--lime)';
+						e.textContent = "Сдано";
+						return;
+					}
+					if(Date.now() > f.plan.getTime()) {
+						e.style.color = 'var(--red)';
+						e.textContent = "Просрок";
+						return;
+					}
+					const diff = Math.round((f.plan.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+					e.textContent = `Осталось ${diff <= 0 ? "менее 0 " : diff} дней`;
+					e.style.color = "";
+				});
+
+				let eTable = document.getElementById('persons') as HTMLTableElement;
+				eTable.replaceChildren();
+				let eHRow = eTable.insertRow();
+       			const eHeadName = document.createElement("th");
+       			const eHeadHead = document.createElement("th");
+       			const eHeadContact = document.createElement("th");
+       			const eHeadBan = document.createElement("th");
+       			eHeadName.textContent = 'Наименование';
+       			eHeadHead.textContent = "ФИО";
+       			eHeadContact.textContent = 'Контактная информация';
+       			eHeadBan.textContent = "";
+       			eHRow.appendChild(eHeadName);
+       			eHRow.appendChild(eHeadHead);
+       			eHRow.appendChild(eHeadContact);
+       			eHRow.appendChild(eHeadBan);
+				for(let person of f.persons) {
+					let eRow = eTable.insertRow();
+					// let eName = eRow.insertCell();
+					eRow.insertCell().textContent = person.type;
+					eRow.insertCell().textContent = person.name;
+					eRow.insertCell().textContent = person.contact;
+       				const eBan = document.createElement("button");
+       				eBan.textContent = "Напрваить письмо";
+       				eRow.insertCell().appendChild(eBan);
+				}
+
 			});
 		});
 	});

@@ -96,7 +96,7 @@ export default function initController() {
 			tmpVector3.normalize();
 
 			position.add(velosity);
-			console.log(position);
+			// console.log(position);
 
 			look.set(position.x, position.y, position.z);
 			look.add(tmpVector3);

@@ -177,18 +177,18 @@ export async function initWorld() {
 					const egeometry = new THREE.EdgesGeometry(geometry);
 	
 					const baseMaterial = new THREE.MeshLambertMaterial({ 
-						color: floor.ready ? 'green' : 'red', 
+						color: floor.fact ? 'green' : 'red', 
 						transparent: true, 
 						opacity: .25,
 					});
 					const glowMaterial = new THREE.MeshLambertMaterial({ 
-						color: floor.ready ? 'green' : 'red', 
+						color: floor.fact ? 'green' : 'red', 
 						transparent: true, 
 						opacity: .15,
 						depthTest: false,
 					});
 					const lineMaterial = new THREE.LineBasicMaterial({ 
-						color: floor.ready ? 'green' : 'red', 
+						color: floor.fact ? 'green' : 'red', 
 						side: THREE.BackSide, 
 						linewidth: 20 
 					})

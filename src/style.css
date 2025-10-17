@@ -109,6 +109,10 @@ table, th, td {
   /*border-color: red; /* Sets the border color to red */*/
 }
 
+td, th {
+	padding: .25em 1em;
+}
+
 .left {
     text-align: left;
 }
@@ -125,4 +129,17 @@ h2::before, h3::before, h4::before, h5::before {
 
 a {
 	color: var(--color-url) !important;
+}
+
+.settings {
+	width: fit-content;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 5px;
+	column-gap: 15px;
+}
+
+.spilt50 {
+	display: grid;
+	grid-template-columns: 50% 50%;
 }
