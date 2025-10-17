@@ -63,26 +63,20 @@ def get_weather():
     
     return data
 
-'''@app.route("/api/types_of_work", methods=["POST"])
+@app.route("/api/types_of_work_and_amount_peoples", methods=["GET"])
 def get_work():
-    api = GoogleSheetsAPI(SHEET_ID)
-    data_array = api.get_columns_data(SHEET_GID)
-    i = 307
-    f = ""
+    api = GoogleSheetsAPI("1PyfwsbPyT4HgM85RLewMiBXoKa9Rn72NM_6fSQRzi7c")
+    data = api.get_columns_data(999492005)
+    i = 12
     dist = {}
-    while i<385:
-        if data_array[1][i] != "2 этап планирования":
-            try:
-                float(data_array[3][i].replace(",","."))
-                print(data_array[1][i])
-                f = data_array[1][i]
-                dist[f] = []
-                
-            except:
-                dist[f].append(data_array[1][i])
-                print(f"  - {data_array[1][i]}")
-        i+=1
-    return dist'''
+    for i1 in range(3, len(data[1])):
+        if data[0][i1] == "" and data[12][i1] != "":
+            i = 12
+            dist[data[1][i1]] = []
+            while i<38:
+                dist[data[1][i1]].append(data[i][i1])
+                i+=8
+    return dist
 
 
 
