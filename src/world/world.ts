@@ -134,7 +134,6 @@ export async function initWorld() {
 							baseMaterial.visible = true;
 							lineMaterial.visible = true;
 							glowMaterial.visible = true;
-							console.log('enable');
 							return;
 						}
 						baseMaterial.visible = false;

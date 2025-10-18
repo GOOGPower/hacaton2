@@ -36,7 +36,6 @@ const updateSelection = function<T>(
 
 	let lastSelected:T = options[0];
 	eSelect.onchange = () => {
-		console.log(eSelect.value, !all, eSelect.value != '-1');
 		if(!all) return listener(options[parseInt(eSelect.value)], false);
 		if(eSelect.value != '-1') lastSelected = options[parseInt(eSelect.value)];
 		listener(lastSelected, eSelect.value == '-1');
@@ -76,9 +75,7 @@ export default function initToolbar() {
 
 		const sAny = state.anySelection;
 		const fAny = state.anyFloor;
-		console.log('update');
 		WorldState.floors.forEach(obj => obj.enable((obj.section == s || sAny) && obj.packet.name == p.name && (obj.floor.id == f.id || fAny)));
-			console.log(s,sAny,p,f,fAny);
 			for(let o of document.getElementsByClassName('single-data')) o.setAttribute('hide', `${sAny || fAny}`);
 
 			updateText('floor-start', f.start.toLocaleDateString('ru-RU'));
@@ -130,16 +127,13 @@ export default function initToolbar() {
 	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, (s, sAny) => {
 		state.selection = s;
 		state.anySelection = sAny;
-		console.log('section');
-				update();
+		update();
 		updateSelection<Database.PacketType>('select-packet', s.packets, (p) => `${p.name}`, p => {
 			state.packet = p;
-			console.log('packet');
-				update();
+			update();
 			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, (f, fAny) => {
 				state.floor = f;
 				state.anyFloor = fAny;
-				console.log('floor');
 				update();
 			}, true);
 		});

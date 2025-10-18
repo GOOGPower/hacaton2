@@ -448,7 +448,7 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: true,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.09.01"), 
 						fact:  new Date("2025.08.30"),
@@ -456,24 +456,328 @@ export const sections:Array<SectionType> = [
 							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
 							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
 						],
-					}
+					},
+					{
+						ready: true,
+						height: 2.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"),
+						fact:  new Date("2025.09.01"),  
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			},
 			{
 				name: "Несущие стены",
-				floors: createFloors()
+				floors: [
+					{
+						ready: true,
+						height: 9.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [
+							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
+						],
+					},
+					{
+						ready: true,
+						height: 2.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.09.01"), 
+						persons: [],
+					},
+				]
 			},
 			{
 				name: "Отделка наружная",
-				floors: createFloors()
+				floors: [
+					{
+						ready: true,
+						height: 9.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [
+							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
+						],
+					},
+					{
+						ready: true,
+						height: 2.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+				]
 			},
 			{
 				name: "Остекление окон",
-				floors: createFloors()
+				floors: [
+					{
+						ready: true,
+						height: 9.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [
+							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
+						],
+					},
+					{
+						ready: true,
+						height: 2.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+				]
 			},
 			{
 				name: "Отделка внутренняя",
-				floors: createFloors()
+				floors: [
+					{
+						ready: true,
+						height: 9.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [
+							{type: "Тех. надзор", name: "Безглазов", contact: "	+7(999)999 99-99"},
+							{type: "УСМР", name: "Кирпичев", contact: "	+7(999)999 99-99"},
+						],
+					},
+					{
+						ready: true,
+						height: 2.5,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+				]
 			}
 		],
 		path: paths[1]
@@ -486,12 +790,64 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.15"), 
 						fact:  undefined,
 						persons: [],
-					}
+					},
+					{
+						ready: true,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			},
 			{
@@ -499,12 +855,64 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.15"), 
 						fact:  new Date("2025.10.10"), // 10 oct
 						persons: [],
-					}
+					},
+					{
+						ready: true,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			},
 			{
@@ -512,12 +920,64 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.15"), 
 						fact:  undefined,
 						persons: [],
-					}
+					},
+					{
+						ready: true,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			},
 			{
@@ -525,12 +985,64 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.15"), 
 						fact:  undefined,
 						persons: [],
-					}
+					},
+					{
+						ready: true,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			},
 			{
@@ -538,12 +1050,64 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 3,
+						height: 9.5,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.15"), 
 						fact:  undefined,
 						persons: [],
-					}
+					},
+					{
+						ready: true,
+						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						fact:  new Date("2025.08.30"),
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
+					{
+						ready: true,
+						height: 9,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.09.01"), 
+						persons: [],
+					},
 				]
 			}
 		],
@@ -564,10 +1128,19 @@ const createWorkTypes = () => {
 export const workTypes:Array<string> = createWorkTypes();
 
 sections.forEach((s) => {
+	if(s.packets.length < 0) {
+		console.warn('need packets');
+		sections[0].packets.forEach(p0 => {
+			s.packets.push({...p0});
+		});
+	}
 	s.packets.forEach(p => {
 		p.floors.forEach((f,fi) => f.id = fi);
 	})
 });
+
+
+
 
 
 // export const database:Array<WorkType> = [

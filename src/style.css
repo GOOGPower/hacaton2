@@ -53,6 +53,11 @@ body {
 	height: 100vh;
 }
 
+label {
+	word-break: keep-all;
+	white-space: nowrap;
+}
+
 #app {
 	background: var(--background);
 	margin: 5em 10em;
