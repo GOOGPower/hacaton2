@@ -56,12 +56,10 @@
     }
   </style>
 
-  <script type="text/javascript" defer>
-    for(let a of document.getElementsByTagName('a')) a.href = undefined;
-  </script>
 
 
   <script async src="./scripts/tag.js"></script><script type="module" crossorigin="" src="./scripts/index-36e650b1.js"></script>
+ 
   <!-- <link rel="modulepreload" crossorigin="" href="/assets/modules-chunk-9965c5fa.js"> -->
   <!-- <link rel="modulepreload" crossorigin="" href="/assets/app-8f4e83d6.js"> -->
   <link rel="stylesheet" href="./styles/style-c25b8062.css">
@@ -102,6 +100,20 @@
             
             .downloading-hide {
                 transform: translateX(-50%) translateY(-100%) !important;
+            }
+
+            @media(width < 1500px) {
+              .main-app-container__desktop-sidebar {
+                display: none;
+              }
+
+              iframe {
+                position: fixed;
+                widows: 100vw;
+                height: 100vh;
+                left: 0;
+                top: 0;
+              }
             }
         </style></head>
 
@@ -208,4 +220,10 @@
   <!-- /Yandex.Metrika counter -->
 
 
-<div id="listly-wrapper" style="top: 0px; left: 0px; position: absolute; z-index: 2147483646; pointer-events: none;"><div id="listly-canvas" style="position: absolute;"></div></div></body></html>
+<div id="listly-wrapper" style="top: 0px; left: 0px; position: absolute; z-index: 2147483646; pointer-events: none;"><div id="listly-canvas" style="position: absolute;"></div></div></body>
+
+ <script type="text/javascript" defer>
+  console.log("AAAAAAAAAAa", document.getElementsByTagName('a').length);
+    for(let a of document.getElementsByTagName('a')) a.removeAttribute('href');
+  </script>
+</html>
