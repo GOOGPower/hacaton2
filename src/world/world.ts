@@ -7,7 +7,7 @@ import * as Database from "../data/Database";
 
 const config = {
 	frag: 'R241.frag', //'school_arq.frag',//"",
-	cube: true,
+	cube: false,
 };
 
 const container = document.getElementById("container")!;
@@ -79,13 +79,12 @@ export async function initWorld() {
 				else shape.lineTo(x, y);
 				move = false;
 
-				const material = new THREE.MeshLambertMaterial({ color: "#6528D7" });
-				material.color.setHSL(pid++/6, .5, .5);
-				const geometry = new THREE.BoxGeometry(1,1,1);
-				const cube = new THREE.Mesh(geometry, material);
-				cube.position.set(x, 0, y);
-				World.scene.three.add(cube);
-
+				// const material = new THREE.MeshLambertMaterial({ color: "#6528D7" });
+				// material.color.setHSL(pid++/6, .5, .5);
+				// const geometry = new THREE.BoxGeometry(1,1,1);
+				// const cube = new THREE.Mesh(geometry, material);
+				// cube.position.set(x, 0, y);
+				// World.scene.three.add(cube);
 			}
 			shape.closePath();
 

@@ -2,6 +2,7 @@ import { string } from "three/tsl";
 import * as Database from "../data/Database";
 import Vars from "../vars";
 import { World, WorldState, type WorldSection, initWorld } from "../world/world";
+import { BarController, BarElement, CategoryScale, Chart, Legend, LinearScale, LineController, LineElement, PointElement, Title, Tooltip } from "chart.js";
 
 
 let fullscreen:boolean = false;
@@ -187,7 +188,112 @@ export default function initToolbar() {
 
 	})();
 
+	(() => {
+		Chart.register(
+			BarElement,
+			BarController,
+			LinearScale,
+			CategoryScale,
+			LineController,
+			PointElement,
+			LineElement,
+			Title,
+			Tooltip,
+			Legend
+		);
 
+		const datasets:Array<any> = [];
+
+		const data:Array<any> = [];
+
+		Database.sections.forEach((s,_si) => {
+			let completed = 0;
+			let uncompleted = 0;
+			s.packets.forEach(p => {
+				p.floors.forEach(f => {
+					completed += f.fact?1:0;
+					uncompleted += f.fact?0:1;
+				});
+			});
+			data.push([completed, uncompleted]);
+		});
+		datasets.push({
+			label: 'Готовность секции (%)',
+			data: data.map(e => e[0]*100/(e[0] + e[1])),
+			fill: false,
+			backgroundColor: `#FF480055`,
+			borderColor: `#FF4800`,
+		});
+		// datasets.push({
+		// 	label: 'err',
+		// 	data: data.map(e => e[1]*100/(e[0] + e[1])),
+		// 	fill: false,
+		// 	backgroundColor: `#f00`,
+		// 	borderColor: `#f00`,
+		// });
+
+		let eChart = document.getElementById('chart') as HTMLCanvasElement;
+		const chart = new Chart(eChart.getContext('2d') as CanvasRenderingContext2D, {
+			type: 'bar',
+			data: {
+				labels: Database.sections.map((_s,si) => `${si+1} секция`),
+				datasets: datasets
+			},
+			options: {
+				elements: {
+					bar: {
+						borderWidth: 2,
+					}
+    			},
+				scales: {
+					x: {stacked: true},
+					y: {stacked: true},
+				}
+			}
+		});
+		// const datasets:Array<any> = [];
+
+		// Database.workTypes.forEach((type, typeId) => {
+		// 	const data:Array<any> = [];
+
+		// 	Database.sections.forEach((s,_si) => {
+		// 		let value = 0;
+		// 		s.packets.forEach(p => {
+		// 			if(p.name != type) return;
+		// 			p.floors.forEach(f => {
+		// 				value += f.fact?1:0;
+		// 			});
+		// 		});
+		// 		data.push(value);
+		// 	});
+
+		// 	datasets.push({
+		// 		label: type,
+		// 		data: data,
+		// 		fill: false,
+		// 			// tension: 0.1
+		// 		backgroundColor: `hsl(${0}deg, 80%, 80%)`,
+		// 		borderColor: `hsl(${typeId*360/Database.workTypes.length}deg, 80%, 80%)`,
+		// 	});
+		// });
+		// console.log(datasets);
+
+		// let eChart = document.getElementById('chart') as HTMLCanvasElement;
+		// const chart = new Chart(eChart.getContext('2d') as CanvasRenderingContext2D, {
+		// 	type: 'bar',
+		// 	data: {
+		// 		labels: Database.sections.map((_s,si) => `${si+1} секция`),
+		// 		datasets: datasets
+		// 	},
+		// 	options: {
+		// 		scales: {
+		// 			x: {stacked: true},
+		// 			y: {stacked: true},
+		// 		}
+		// 	}
+		// });
+
+	})();
 
 	// eFloorSelect.addEventListener('change', () => selectFloor(parseInt(eFloorSelect.value)));
 

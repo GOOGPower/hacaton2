@@ -140,11 +140,7 @@ function createFloors():Array<FloorType> {
 
 const angle = Math.atan2(20.3, 25.9);
 
-const paths = [
-
-];
-
-
+const paths = [];
 
 (() => {
 	let path = [];
