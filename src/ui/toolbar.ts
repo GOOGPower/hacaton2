@@ -1,12 +1,10 @@
+import { string } from "three/tsl";
 import * as Database from "../data/Database";
 import Vars from "../vars";
 import { World, WorldState, type WorldSection, initWorld } from "../world/world";
 
 
 let fullscreen:boolean = false;
-
-const fullscreenText = ["Полный экран", "Обычный режим"];
-
 
 const updateSelection = function<T>(
 		elementId:string, 
@@ -17,7 +15,6 @@ const updateSelection = function<T>(
 
 	let eSelect = document.getElementById(elementId) as HTMLSelectElement;
 	const lVal = eSelect.value;
-	console.log(lVal);
 	eSelect.innerHTML = "";
 	let oid = 0;
 	for(let option of options) {
@@ -38,6 +35,8 @@ const updateSelection = function<T>(
 
 	let lastSelected:T = options[0];
 	eSelect.onchange = () => {
+		console.log(eSelect.value, !all, eSelect.value != '-1');
+		if(!all) return listener(options[parseInt(eSelect.value)], false);
 		if(eSelect.value != '-1') lastSelected = options[parseInt(eSelect.value)];
 		listener(lastSelected, eSelect.value == '-1');
 	};
@@ -50,12 +49,8 @@ export default function initToolbar() {
 	let eContainer = document.getElementById('container');
 
 	if(eToggleFullscreen) {
-		eToggleFullscreen.textContent = fullscreenText[0];
 		eToggleFullscreen.onclick = () => {
-			fullscreen = !fullscreen;
-			if(fullscreen && eContainer) eContainer.requestFullscreen();
-			else document.exitFullscreen();
-			eToggleFullscreen.textContent = fullscreenText[fullscreen?1:0];
+			eContainer?.requestFullscreen();
 		};
 	}
 
@@ -65,58 +60,134 @@ export default function initToolbar() {
 		if(e && cons) cons(e);
 	}
 
-	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, (s, sAny) => {
-		updateSelection<Database.PacketType>('select-packet', s.packets, (p) => `${p.name}`, p => {
-			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, (f, fAny) => {
-				WorldState.floors.forEach(obj => obj.enable((obj.section == s || sAny) && obj.packet.name == p.name && (obj.floor.id == f.id || fAny)));
-				updateText('floor-start', f.start.toLocaleDateString('ru-RU'));
-				updateText('floor-plan', f.plan.toLocaleDateString('ru-RU'));
-				updateText('floor-fact', f.fact == undefined ? "Не готово" : f.fact.toLocaleDateString('ru-RU'));
+	const state = {
+		selection: Database.sections[0],
+		packet: Database.sections[0].packets[0],
+		floor: Database.sections[0].packets[0].floors[0],
+		anySelection: false,
+		anyFloor: false
+	}
 
-				updateText('status-info', "", e => {
-					if(f.fact) {
-						e.style.color = 'var(--lime)';
-						e.textContent = "Сдано";
-						return;
-					}
-					if(Date.now() > f.plan.getTime()) {
-						e.style.color = 'var(--red)';
-						e.textContent = "Просрок";
-						return;
-					}
-					const diff = Math.round((f.plan.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
-					e.textContent = `Осталось ${diff <= 0 ? "менее 0 " : diff} дней`;
-					e.style.color = "";
-				});
+	const update = () => {
+		const s = state.selection;
+		const p = state.packet;
+		const f = state.floor;
 
-				let eTable = document.getElementById('persons') as HTMLTableElement;
-				eTable.replaceChildren();
-				let eHRow = eTable.insertRow();
-       			const eHeadName = document.createElement("th");
-       			const eHeadHead = document.createElement("th");
-       			const eHeadContact = document.createElement("th");
-       			const eHeadBan = document.createElement("th");
-       			eHeadName.textContent = 'Наименование';
-       			eHeadHead.textContent = "ФИО";
-       			eHeadContact.textContent = 'Контактная информация';
-       			eHeadBan.textContent = "";
-       			eHRow.appendChild(eHeadName);
-       			eHRow.appendChild(eHeadHead);
-       			eHRow.appendChild(eHeadContact);
-       			eHRow.appendChild(eHeadBan);
-				for(let person of f.persons) {
-					let eRow = eTable.insertRow();
-					// let eName = eRow.insertCell();
-					eRow.insertCell().textContent = person.type;
-					eRow.insertCell().textContent = person.name;
-					eRow.insertCell().textContent = person.contact;
-       				const eBan = document.createElement("button");
-       				eBan.textContent = "Напрваить письмо";
-       				eRow.insertCell().appendChild(eBan);
+		const sAny = state.anySelection;
+		const fAny = state.anyFloor;
+		console.log('update');
+		WorldState.floors.forEach(obj => obj.enable((obj.section == s || sAny) && obj.packet.name == p.name && (obj.floor.id == f.id || fAny)));
+			console.log(s,sAny,p,f,fAny);
+			for(let o of document.getElementsByClassName('single-data')) o.setAttribute('hide', `${sAny || fAny}`);
+
+			updateText('floor-start', f.start.toLocaleDateString('ru-RU'));
+			updateText('floor-plan', f.plan.toLocaleDateString('ru-RU'));
+			updateText('floor-fact', f.fact == undefined ? "Не готово" : f.fact.toLocaleDateString('ru-RU'));
+
+			updateText('status-info', "", e => {
+				if(f.fact) {
+					e.style.color = 'var(--lime)';
+					e.textContent = "Сдано";
+					return;
 				}
+				if(Date.now() > f.plan.getTime()) {
+					e.style.color = 'var(--red)';
+					e.textContent = "Просрок";
+					return;
+				}
+				const diff = Math.round((f.plan.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+				e.textContent = `Осталось ${diff <= 0 ? "менее 0 " : diff} дней`;
+				e.style.color = "";
+			});
+
+			let eTable = document.getElementById('persons') as HTMLTableElement;
+			eTable.replaceChildren();
+			let eHRow = eTable.insertRow();
+			const eHeadName = document.createElement("th");
+			const eHeadHead = document.createElement("th");
+			const eHeadContact = document.createElement("th");
+			const eHeadBan = document.createElement("th");
+			eHeadName.textContent = 'Наименование';
+			eHeadHead.textContent = "ФИО";
+			eHeadContact.textContent = 'Контактная информация';
+			eHeadBan.textContent = "";
+			eHRow.appendChild(eHeadName);
+			eHRow.appendChild(eHeadHead);
+			eHRow.appendChild(eHeadContact);
+			eHRow.appendChild(eHeadBan);
+			for(let person of f.persons) {
+				let eRow = eTable.insertRow();
+				// let eName = eRow.insertCell();
+				eRow.insertCell().textContent = person.type;
+				eRow.insertCell().textContent = person.name;
+				eRow.insertCell().textContent = person.contact;
+				const eBan = document.createElement("button");
+				eBan.textContent = "Напрваить письмо";
+				eRow.insertCell().appendChild(eBan);
+			}
+	}
+	updateSelection<Database.SectionType>('select-section', Database.sections, (_s,id) => `${id+1} секция`, (s, sAny) => {
+		state.selection = s;
+		state.anySelection = sAny;
+		console.log('section');
+				update();
+		updateSelection<Database.PacketType>('select-packet', s.packets, (p) => `${p.name}`, p => {
+			state.packet = p;
+			console.log('packet');
+				update();
+			updateSelection<Database.FloorType>('select-floor', p.floors, (_f,id) => `${id+1} захватка`, (f, fAny) => {
+				state.floor = f;
+				state.anyFloor = fAny;
+				console.log('floor');
+				update();
 			}, true);
 		});
 	}, true);
+
+
+	(() => {
+		const map:any = {};
+		Database.workTypes.forEach((t,ti) => map[t] = ti);
+
+		let cols:Array<Array<string|HTMLElement>> = [
+			["", ...Database.workTypes.map(s => `<b>${s}</b>`).sort()],
+			...Database.sections.map((s,si) => [`${si+1} секция`, ...[...s.packets].sort((p1,p2) => map[p1.name] - map[p2.name]).map((p) => {
+				let eCell = document.createElement('span');
+				p.floors.forEach((f,fi) => {
+					let eRow = document.createElement('span');
+					eRow.textContent = `${fi} захватка\n`;
+					eRow.style.color = f.fact ? 'var(--lime)' : 'var(--red)';
+					eCell.append(eRow);
+					eCell.append(document.createElement('br'));
+				});
+				return eCell;
+			})]),
+		];
+		let eTable = document.getElementById('all-data') as HTMLTableElement;
+		for(let col of cols) {
+			let eRow = eTable.insertRow();
+			for(let cell of col) {
+				if (typeof(cell) == 'string') eRow.insertCell().innerHTML = cell;
+				else eRow.insertCell().appendChild(cell);
+			}
+		}
+
+
+
+		// let eHeadRow = eTable.insertRow();
+		// eHeadRow.insertCell();
+		// Database.sections.forEach((s,si) => {
+		// 	let eCell = document.createElement('th');
+		// 	eCell.textContent = `${si+1} секция`;
+		// 	eHeadRow.appendChild(eCell);
+		// 	// let eRow = eAllData.insertRow();
+		// 	// eRow.insertCell().textContent = ;
+		// 	// eRow.insertCell().textContent = `${p.name}`;
+		// });
+
+	})();
+
+
 
 	// eFloorSelect.addEventListener('change', () => selectFloor(parseInt(eFloorSelect.value)));
 

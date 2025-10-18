@@ -45,6 +45,243 @@ export type SectionType = {
 	path: Array<Array<number>>,
 }
 
+// type FunctionType = {
+	// cons?: (win:FloorType) => Array<FloorType>|never|undefined;
+// }
+const createFloors:()=>Array<FloorType> = () => {
+	return [
+		{
+			ready: false,
+			height: 8,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: []
+		},
+		{
+			ready: false,
+			height: 3,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			height: baseHeight,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			height: baseHeight,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			height: baseHeight,
+			start: new Date("2025.01.01"), 
+			plan:  new Date("2025.09.01"), 
+			fact:  new Date("2025.08.30"),
+			persons: [],
+		},
+		{
+			ready: false,
+			height: 9,
+			start: new Date(2025, 0, 1), 
+			plan: new Date(2025, 7, 1), 
+			fact: undefined,
+			persons: [],
+		},
+	]
+}
+
+// const paths = [
+// 	[
+// 		[ 0,		0	 ],
+// 		[ 25.9,		20.3 ],
+// 		[ 15.9,		33.2 ],
+// 		[ -10.5,	12.8 ],
+// 	],[
+// 		[ 25.9,		20.3 ],
+// 		[ 51.6,		40.7 ],
+// 		[ 41.3,		53.3 ],
+// 		[ 15.9,		33.2 ],
+// 	],[
+// 		[ 51.6,		40.7 ],
+// 		[ 60.6,		50.9 ],
+// 		[ 60.6,		75.8 ],
+// 		[ 49.2,		75.8 ],
+// 		[ 49.2,		58.2 ],
+// 		[ 41.3,		53.3 ],
+// 	]
+// ];
+
+const angle = Math.atan2(20.3, 25.9);
+
+const paths = [
+
+];
+
+
+
+(() => {
+	let path = [];
+	let dx = new Vector2(Math.cos(angle), Math.sin(angle));
+	let dy = new Vector2(Math.cos(angle+Math.PI/2), Math.sin(angle+Math.PI/2));
+	let p = new Vector2(0,0);
+	p.add(dx.clone().multiplyScalar(-2.5));
+	p.add(dy.clone().multiplyScalar(-2));
+
+	path.push([p.x,p.y]);
+	p.add(dx.clone().multiplyScalar(35));
+	path.push([p.x,p.y]);
+	p.add(dy.clone().multiplyScalar(20));
+	path.push([p.x,p.y]);
+	p.add(dx.clone().multiplyScalar(-35));
+	path.push([p.x,p.y]);
+
+	let w = 10;
+	let h = 10;
+	paths.push(path);
+})();
+(() => {
+	let path = [];
+	let dx = new Vector2(Math.cos(angle), Math.sin(angle));
+	let dy = new Vector2(Math.cos(angle+Math.PI/2), Math.sin(angle+Math.PI/2));
+	let p = new Vector2(0,0);
+	p.add(dx.clone().multiplyScalar(-2.5));
+	p.add(dy.clone().multiplyScalar(-2));
+	p.add(dx.clone().multiplyScalar(35));
+
+	path.push([p.x,p.y]);
+	p.add(dx.clone().multiplyScalar(35));
+	path.push([p.x,p.y]);
+	p.add(dy.clone().multiplyScalar(20));
+	path.push([p.x,p.y]);
+	p.add(dx.clone().multiplyScalar(-35));
+	path.push([p.x,p.y]);
+
+	let w = 10;
+	let h = 10;
+	paths.push(path);
+})();
+
+const angle2 = Math.atan2(244,23);
+
+// 3 section
+(() => {
+	let path = [];
+	let dx = new Vector2(Math.cos(angle), Math.sin(angle));
+	let dy = new Vector2(Math.cos(angle+Math.PI/2), Math.sin(angle+Math.PI/2));
+	let dx2 = new Vector2(Math.cos(angle2), Math.sin(angle2));
+	let dy2 = new Vector2(Math.cos(angle2+Math.PI/2), Math.sin(angle2+Math.PI/2));
+	let p = new Vector2(0,0);
+	p.add(dx.clone().multiplyScalar(-2.5));
+	p.add(dy.clone().multiplyScalar(-2));
+	p.add(dx.clone().multiplyScalar(35*2));
+
+	const src = new Vector2(p.x,p.y);
+	path.push([p.x,p.y]);
+	p.add(dx.clone().multiplyScalar(13));
+	path.push([p.x,p.y]);
+
+
+	p.add(dx2.clone().multiplyScalar(32));
+	path.push([p.x,p.y]);
+
+
+
+	p.add(dy2.clone().multiplyScalar(22));
+
+
+	path.push([p.x,p.y]);
+
+	p.add(dx2.clone().multiplyScalar(-25));
+	path.push([p.x,p.y]);
+
+	p.set(src.x, src.y);
+	p.add(dy.clone().multiplyScalar(20));
+	path.push([p.x,p.y]);
+
+	let w = 10;
+	let h = 10;
+	paths.push(path);
+})();
+// (() => {
+// 	let path = [];
+// 	let dx = new Vector2(Math.cos(angle), Math.sin(angle));
+// 	let dy = new Vector2(Math.cos(angle+Math.PI/2), Math.sin(angle+Math.PI/2));
+// 	let dx2 = new Vector2(Math.cos(angle2), Math.sin(angle2));
+// 	let dy2 = new Vector2(Math.cos(angle2+Math.PI/2), Math.sin(angle2+Math.PI/2));
+// 	let p = new Vector2(0,0);
+// 	p.add(dx.clone().multiplyScalar(-2.5));
+// 	p.add(dy.clone().multiplyScalar(-2));
+// 	p.add(dx.clone().multiplyScalar(35));
+// 	p.add(dx.clone().multiplyScalar(33));
+
+// 	path.push([p.x,p.y]);
+// 	p.add(dx.clone().multiplyScalar(10));
+// 	path.push([p.x,p.y]);
+// 	p.add(new Vector2(0,50));
+// 	path.push([p.x,p.y]);
+// 	p.add(dx.clone().multiplyScalar(-33));
+// 	path.push([p.x,p.y]);
+
+// 	let w = 10;
+// 	let h = 10;
+// 	paths.push(path);
+// })();
+
+
+paths.push([
+	[ 0,		0	 ],
+	[ 25.9,		20.3 ],
+	[ 15.9,		33.2 ],
+	[ -10.5,	12.8 ],
+]);
+paths.push([
+	[ 25.9,		20.3 ],
+	[ 51.6,		40.7 ],
+	[ 41.3,		53.3 ],
+	[ 15.9,		33.2 ],
+]);
+paths.push([
+	[ 51.6,		40.7 ],
+	[ 60.6,		50.9 ],
+	[ 60.6,		75.8 ],
+	[ 49.2,		75.8 ],
+	[ 49.2,		58.2 ],
+	[ 41.3,		53.3 ],
+]);
+
+// const ab = Math.atan2(paths[0][1][1]-paths[0][0][1],paths[0][1][0]-paths[0][0][0]) - Math.PI/2;
+
+// paths[0][0][0] += 2*Math.cos(ab);
+// paths[0][0][1] += 2*Math.sin(ab);
+// paths[0][1][0] += 2*Math.cos(ab);
+// paths[0][1][1] += 2*Math.sin(ab);
+const baseHeight = 3.03;
+
 export const sections:Array<SectionType> = [
 	{
 		packets: [
@@ -53,7 +290,7 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
-						height: 5,
+						height: 8,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.01.01"), 
 						fact:  new Date("2025.01.01"),
@@ -65,7 +302,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 4,
+						height: 3,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.16"), 
 						fact:  undefined,
@@ -73,7 +310,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: baseHeight,
 						start: new Date("2025.01.01"),
 						plan:  new Date("2025.10.17"), 
 						fact:  undefined,
@@ -81,7 +318,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: baseHeight,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.18"), 
 						fact:  undefined,
@@ -89,7 +326,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: baseHeight,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.19"), 
 						fact:  undefined,
@@ -97,7 +334,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: baseHeight,
 						start: new Date("2025.01.01"), 
 						plan:  new Date("2025.10.20"), 
 						fact:  undefined,
@@ -105,7 +342,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: baseHeight,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -113,7 +350,7 @@ export const sections:Array<SectionType> = [
 					},
 					{
 						ready: false,
-						height: 3,
+						height: 9,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
@@ -126,73 +363,84 @@ export const sections:Array<SectionType> = [
 				floors: [
 					{
 						ready: false,
+						height: 8,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.08.01"), 
+						fact:  new Date("2025.08.15"),
+						persons: []
+					},
+					{
+						ready: false,
 						height: 3,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.16"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: baseHeight,
+						start: new Date("2025.01.01"),
+						plan:  new Date("2025.10.17"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.18"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.19"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: baseHeight,
+						start: new Date("2025.01.01"), 
+						plan:  new Date("2025.10.20"), 
+						fact:  undefined,
+						persons: [],
+					},
+					{
+						ready: false,
+						height: baseHeight,
 						start: new Date(2025, 0, 1), 
 						plan: new Date(2025, 7, 1), 
 						fact: new Date(2025, 7, 15),
 						persons: [],
-					}
+					},
+					{
+						ready: false,
+						height: 9,
+						start: new Date(2025, 0, 1), 
+						plan: new Date(2025, 7, 1), 
+						fact: new Date(2025, 7, 15),
+						persons: [],
+					},
 				]
 			},
 			{
 				name: "Остекление окон",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-						persons: [],
-					}
-				]
+				floors: [...createFloors()]
 			},
 			{
 				name: "Отделка наружная",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-						persons: [],
-					}
-				]
-			},
-			{
-				name: "Остекление окон",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-						persons: [],
-					}
-				]
+				floors: [...createFloors()]
 			},
 			{
 				name: "Отделка внутренняя",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date(2025, 0, 1), 
-						plan: new Date(2025, 7, 1), 
-						fact: new Date(2025, 7, 15),
-						persons: [],
-					}
-				]
+				floors: [...createFloors()]
 			}
 		],
-		path: [
-			[ 0,		0	 ],
-			[ 25.9,		20.3 ],
-			[ 15.9,		33.2 ],
-			[ -10.5,	12.8 ],
-		]
+		path: paths[0],
 	},
 	// 2 section
 	{
@@ -215,76 +463,22 @@ export const sections:Array<SectionType> = [
 			},
 			{
 				name: "Несущие стены",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.09.01"), 
-						fact:  new Date("2025.08.30"),
-						persons: [],
-					}
-				]
-			},
-			{
-				name: "Остекление окон",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.09.01"), 
-						fact:  new Date("2025.08.30"),
-						persons: [],
-					}
-				]
+				floors: createFloors()
 			},
 			{
 				name: "Отделка наружная",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.09.01"), 
-						fact:  new Date("2025.08.30"),
-						persons: [],
-					}
-				]
+				floors: createFloors()
 			},
 			{
 				name: "Остекление окон",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.09.01"), 
-						fact:  new Date("2025.08.30"),
-						persons: [],
-					}
-				]
+				floors: createFloors()
 			},
 			{
 				name: "Отделка внутренняя",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.09.01"), 
-						fact:  new Date("2025.08.30"),
-						persons: [],
-					}
-				]
+				floors: createFloors()
 			}
 		],
-		path: [
-			[ 25.9,		20.3 ],
-			[ 51.6,		40.7 ],
-			[ 41.3,		53.3 ],
-			[ 15.9,		33.2 ],
-		]
+		path: paths[1]
 	},
 	// 3 section
 	{
@@ -342,19 +536,6 @@ export const sections:Array<SectionType> = [
 				]
 			},
 			{
-				name: "Остекление окон",
-				floors: [
-					{
-						ready: false,
-						height: 3,
-						start: new Date("2025.01.01"), 
-						plan:  new Date("2025.10.15"), 
-						fact:  undefined,
-						persons: [],
-					}
-				]
-			},
-			{
 				name: "Отделка внутренняя",
 				floors: [
 					{
@@ -368,14 +549,7 @@ export const sections:Array<SectionType> = [
 				]
 			}
 		],
-		path: [
-			[ 51.6,		40.7 ],
-			[ 60.6,		50.9 ],
-			[ 60.6,		75.8 ],
-			[ 49.2,		75.8 ],
-			[ 49.2,		58.2 ],
-			[ 41.3,		53.3 ],
-		]
+		path: paths[2]
 	}
 
 ];

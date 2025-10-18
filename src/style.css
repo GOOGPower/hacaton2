@@ -1,8 +1,10 @@
 :root {
-	--red: #ec6066;
-	--lime: #60ec66;
+	--red: #df000a;
+	--red-h: #ec6066;
+	--lime: #007905;
 	--blue: #6699cc;
 	--gray: #A6ACB9;
+	--accent-color: #FF4800;
 
 	--color: #d8dee9;
 	--color-url: var(--blue);
@@ -10,7 +12,7 @@
 	--background: #fff;
 	color: #111;
 
-	--color-header-prefix-main: var(--red);
+	--color-header-prefix-main: var(--red-h);
 	--color-header-prefix: #f97b57;
 
 	--color-button-border: #60B4B4;
@@ -28,6 +30,7 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	/*box-shadow: 0 0 3em #00000033 inset;*/
 }
 
 a {
@@ -83,7 +86,7 @@ body {
     background: var(--background);
 	z-index: 999;
 	padding: .5em .75em;
-	box-shadow: 0 0 1em #00000088;
+	box-shadow: 0 0 3em #00000033, 0 0 0 2px var(--border-color);
 	border-radius: 0 0 3px 0;
 }
 
@@ -142,4 +145,24 @@ a {
 .spilt50 {
 	display: grid;
 	grid-template-columns: 50% 50%;
+}
+
+button {
+	border: none;
+	/*color: var(--border-color);*/
+	/*background: ;*/
+	/*font-weight: bold;*/
+	/*font-size: inherit;*/
+	background: var(--background);
+	box-shadow: 0 0 0 2px var(--border-color);
+	transition: .12s;
+}
+
+button:hover {
+	background: var(--background);
+	color: var(--accent-color);
+}
+
+.single-data[hide='true'] {
+	display: none;
 }

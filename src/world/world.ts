@@ -72,8 +72,8 @@ export async function initWorld() {
 				let x = Math.cos(rotate)*-point[0] - Math.sin(rotate)*point[1];
 				let y = Math.sin(rotate)*-point[0] + Math.cos(rotate)*point[1];
 
-				x += -53;
-				y += 65;
+				// x += -53;
+				// y += 65;
 
 				if(move) shape.moveTo(x, y);
 				else shape.lineTo(x, y);
@@ -121,7 +121,7 @@ export async function initWorld() {
 				const mesh = new THREE.Mesh(geometry, baseMaterial);
 				const glowMesh = new THREE.Mesh(geometry, glowMaterial);
 				const lines = new THREE.LineSegments(egeometry, lineMaterial)
-				glowMesh.position.y = lines.position.y = mesh.position.y = y + floor.height - 15;
+				glowMesh.position.y = lines.position.y = mesh.position.y = y + floor.height;
 				y += floor.height;
 
 				WorldState.floors.push({
@@ -183,6 +183,11 @@ export async function initWorld() {
 
 	fragments.list.onItemSet.add(({ value: model }) => {
 		model.useCamera(World.camera.three);
+		model.object.position.x += 53;
+		model.object.position.y += 15;
+		model.object.position.z += -65;
+				// x += -53;
+				// y += 65;
 		World.scene.three.add(model.object);
 		console.log(model);
 		fragments.core.update(true);
@@ -227,9 +232,20 @@ export async function initWorld() {
 		}
 	}
 
-
-
-	console.log(World.scene.three.children);
+	// (() => {
+	// 	const size = 150;
+	// 	const divisions = 150;
+	// 	let grid = new THREE.GridHelper(size, divisions, 0x0000ff, 0x888888);
+	// 	World.scene.three.add(grid );
+	// })();
+	// (() => {
+	// 	const size = 100;
+	// 	const divisions = 100;
+	// 	let grid = new THREE.GridHelper(size, divisions, 0x0000ff, 0x888888);
+	// 	grid.rotateX(Math.PI/2);
+	// 	World.scene.three.add(grid);
+	// })();
+	// console.log(World.scene.three.children);
 	// let intervalId = setInterval(() => {
 		// console.log(World.scene.three.children[3].children.length);
 		// if(World.scene.three.children[3].children.length > 0) {
