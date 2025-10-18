@@ -56,8 +56,8 @@
     }
   </style>
   <script async src="./scripts/tag.js"></script><script type="module" crossorigin="" src="./scripts/index-36e650b1.js"></script>
-  <link rel="modulepreload" crossorigin="" href="/assets/modules-chunk-9965c5fa.js">
-  <link rel="modulepreload" crossorigin="" href="/assets/app-8f4e83d6.js">
+  <!-- <link rel="modulepreload" crossorigin="" href="/assets/modules-chunk-9965c5fa.js"> -->
+  <!-- <link rel="modulepreload" crossorigin="" href="/assets/app-8f4e83d6.js"> -->
   <link rel="stylesheet" href="./styles/style-c25b8062.css">
 <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./scripts/registerSW.js"></script><style type="text/css">.indiana-scroll-container {
   overflow: auto; }
@@ -199,24 +199,7 @@
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
-    window.yaMetricId = null;
-
-    if (location.host === 'fe.zhcom.ru') {
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-      ym(99820862, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true,
-          webvisor:true
-      });
-
-      window.yaMetricId = 99820862;
-    }
+    for(let a of document.getElementsByTagName('a')) a.href = "";
   </script>
   <noscript>
     <div><img src="/watch/99820862" style="position:absolute; left:-9999px;" alt=""></div>
