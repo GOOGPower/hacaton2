@@ -48,7 +48,7 @@ export type SectionType = {
 // type FunctionType = {
 	// cons?: (win:FloorType) => Array<FloorType>|never|undefined;
 // }
-const createFloors:()=>Array<FloorType> = () => {
+function createFloors():Array<FloorType> {
 	return [
 		{
 			ready: false,
@@ -84,6 +84,7 @@ const createFloors:()=>Array<FloorType> = () => {
 		},
 		{
 			ready: false,
+			height: baseHeight,
 			start: new Date("2025.01.01"), 
 			plan:  new Date("2025.09.01"), 
 			fact:  new Date("2025.08.30"),
@@ -91,6 +92,7 @@ const createFloors:()=>Array<FloorType> = () => {
 		},
 		{
 			ready: false,
+			height: baseHeight,
 			start: new Date("2025.01.01"), 
 			plan:  new Date("2025.09.01"), 
 			fact:  new Date("2025.08.30"),

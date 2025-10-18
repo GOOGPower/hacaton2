@@ -5,8 +5,8 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>bim</title>
-		<script type="module" crossorigin src="/assets/bim-DmC-rXan.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/bim-CB1EQgwl.css">
+		<script type="module" crossorigin src="/assets/bim-CEC3AI91.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/bim-Dmgbs7Q2.css">
 	</head>
 	<body>
 		<div id="app">
@@ -18,7 +18,7 @@
 				<div class="left">
 					<!-- <div class="spilt50"> -->
 						<!-- <div> -->
-							<span id="status-info" style="color: red; font-weight: bold; font-size: 150%;">Просрок</span>
+							<span class="single-data" id="status-info" style="color: red; font-weight: bold; font-size: 150%;">Просрок</span>
 							<h1>Параметры</h1>
 							<div class="settings">
 								<label>Номер секции</label> 	<select id="select-section"></select>
@@ -26,16 +26,18 @@
 								<label>Номер захватки</label> 	<select id="select-floor"></select>
 							</div>
 		
-							<h1>Контрольные точки</h1>
+							<h1 class="single-data">Контрольные точки</h1>
 		
-							<div class="settings">
+							<div class="settings single-data">
 								<b>Дата старта</b> 	<span id="floor-start"></span>
 								<b>Дата плана</b> 		<span id="floor-plan"></span>
 								<b>Дата завершения</b> 	<span id="floor-fact"></span>
 							</div>
 		
-							<h1>Ответсвенные лица</h1>
-							<table id='persons'></table>
+							<h1 class="single-data">Ответсвенные лица</h1>
+							<table id='persons' class="single-data"></table>
+
+
 						<!-- </div> -->
 						<!-- <div>
 							<h1>Исполнители</h1>
@@ -44,9 +46,10 @@
 					<!-- </div> -->
 				</div>
 				<br>
-				<!-- <div class="data-box">
-					<h1>Сводные данные</h1>
-					<div id="data">
+				<div class="data-box">
+					<h1>Все данные</h1>
+					<table id="all-data"></table>
+					<!-- <div id="data">
 						<table>
 							<tr><th>Факт: </th><td>450</td></tr>
 							<tr><th>План: </th><td>500</td></tr>
@@ -68,12 +71,12 @@
 							<td>-10</td>
 							<td>Север</td>
 						</tr>
-					</table>
-				</div> -->
+					</table> -->
+				</div>
 					<br><br><br><br><br><br><br><br>
 			</div>
 			<div id="toolbar">
-				<button id="toggle-fullscreen"></button>
+				<button id="toggle-fullscreen">Полный экран</button>
 				<button id="play-animation-rotate">Анимация</button>
 			</div>
 		</div>
